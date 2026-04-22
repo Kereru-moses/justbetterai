@@ -1,0 +1,101 @@
+AI PROMPTING FOR MEN 40+ - CHEAT SHEET
+justbetterAI.tech
+
+You do not need to "learn AI."
+You need to learn how to ask better.
+
+THE FRAMEWORK
+Role + Goal + Context + Level + Output + Constraints + Quality Bar
+
+1) ROLE
+- Tell AI who to act as.
+- Examples:
+  - Act as an excellent teacher.
+  - Act as a brutally honest coach.
+  - Act as a sharp problem-solver.
+  - Act as an elite communication coach.
+
+2) GOAL
+- Ask for the actual result, not a broad topic.
+- Weak: Help me with fitness.
+- Better: Help me build a simple fitness routine I can actually stick to.
+
+3) CONTEXT
+- Add relevant background so the answer lands in real life.
+- Include:
+  - What is going on
+  - What you have tried
+  - What keeps going wrong
+- Examples:
+  - I work long hours and have low energy by evening.
+  - I start strong, then fall off after a few days.
+
+4) LEVEL
+- Tell AI your level.
+- Examples:
+  - Assume I am a beginner.
+  - Explain it simply.
+  - I know the basics, but I want to get better.
+
+5) OUTPUT
+- Specify the response format.
+- Examples:
+  - Give me a simple plan.
+  - Break it into steps.
+  - Start with the core idea, then examples, then actions.
+  - Give me the biggest mistakes and what to do instead.
+
+6) CONSTRAINTS
+- State what to avoid.
+- Examples:
+  - Do not use jargon.
+  - Do not give generic advice.
+  - Keep it practical, not theoretical.
+  - Keep it concise.
+  - Do not sugar-coat it.
+
+7) QUALITY BAR
+- Ask for better thinking, not padded output.
+- Examples:
+  - Focus on what matters most.
+  - Challenge weak assumptions.
+  - Do not just agree with me.
+  - Give me the highest leverage advice.
+  - Make it useful in real life.
+
+BEST ALL-PURPOSE TEMPLATE
+Act as a high-level [teacher / coach / problem-solver / strategist]. Help me with [goal]. My situation is [context]. My level is [beginner / intermediate / advanced]. I want [output]. Make it [simple / practical / direct / step-by-step]. Avoid [jargon / fluff / generic advice]. Focus on what matters most and challenge weak assumptions where needed.
+
+COPY-AND-PASTE TEMPLATES
+
+1) LEARN SOMETHING PROPERLY
+Act as an excellent teacher. Help me understand [topic] from first principles as if I am intelligent but new to it. Start with the core idea in simple terms, then explain how it works, why it matters, the common mistakes or misunderstandings, and how it applies in real life. Use plain English. Avoid jargon and fluff. End with the small number of things that matter most.
+
+2) IMPROVE YOURSELF WITHOUT MOTIVATION FLUFF
+Act as a brutally honest but effective coach. Help me improve [area]. My situation is [context]. What keeps happening is [pattern]. I do not want motivation or generic advice. I want the highest leverage actions, the biggest mistakes I am making, and a realistic plan I can follow. Keep it practical, direct, and focused on real behaviour change.
+
+3) SOLVE A PROBLEM CLEARLY
+Act as a sharp problem-solver. Help me think clearly about [problem]. First identify what the real problem may be beneath the surface. Then show me the likely causes, the common traps, and the best way to handle it. Separate what matters from what only feels important. Be honest, practical, and direct.
+
+4) GET BETTER AT A SKILL
+Act as an elite coach for [skill]. Help me improve quickly. My current level is [level]. My main problem is [issue]. Break this into the key sub-skills I need to improve, the biggest mistakes people at my level make, the best drills or exercises, and a simple practice plan. Focus on what will create the fastest improvement.
+
+5) CUT THROUGH SAFE ANSWERS
+Add this line:
+Do not give me a safe, average answer. Give me the answer that is most useful, accurate, and high leverage. Tell me the most important truth, the most common mistake, and the best next action.
+
+BIGGEST PROMPTING MISTAKES
+- Too vague
+- Asking for too much at once
+- No context
+- No level given
+- No output direction
+- No constraints
+- No quality bar
+
+BEFORE / AFTER
+Weak:
+How do I get in shape?
+
+Better:
+Act as a practical fitness coach. Help me get in better shape. I am in my 40s, my energy dips after work, and I struggle with consistency more than effort. I want a simple plan I can actually stick to. Keep it practical and realistic. Avoid jargon, fluff, and perfectionist advice. Focus on what matters most and the few habits that will make the biggest difference.

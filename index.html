@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>justbetterAI.tech | Life, Just Better with AI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Space Grotesk", "sans-serif"],
+            display: ["Bungee", "cursive"],
+            action: ["Bangers", "cursive"]
+          },
+          colors: {
+            comic: {
+              yellow: "#ffff00",
+              red: "#d30000",
+              black: "#000000",
+              white: "#ffffff"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .halftone-pattern {
+      background-image: radial-gradient(#000 15%, transparent 16%);
+      background-size: 10px 10px;
+      opacity: 0.1;
+    }
+
+    .halftone-yellow {
+      background-image: radial-gradient(rgba(0, 0, 0, 0.2) 15%, transparent 16%);
+      background-size: 8px 8px;
+    }
+
+    .ink-border-lg {
+      border: 6px solid #000;
+    }
+
+    .ink-border-sm {
+      border: 3px solid #000;
+    }
+
+    .comic-shadow-red {
+      box-shadow: 10px 10px 0 0 #d30000;
+    }
+
+    .comic-shadow-black {
+      box-shadow: 10px 10px 0 0 #000;
+    }
+
+    .comic-shadow-yellow {
+      box-shadow: 10px 10px 0 0 #ffff00;
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: #fff;
+      border: 4px solid #000;
+    }
+
+    .speech-bubble:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-top-color: #000;
+      border-bottom: 0;
+      border-left: 0;
+      margin-left: -10px;
+      margin-bottom: -20px;
+    }
+
+    .manga-lines {
+      background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.05) 10px, rgba(0, 0, 0, 0.05) 11px);
+    }
+
+    .text-outline {
+      -webkit-text-stroke: 1.5px black;
+    }
+
+    .action-skew {
+      transform: skew(-5deg);
+    }
+
+    .hero-contrast img {
+      filter: contrast(1.2) saturate(1.1);
+    }
+
+    .manga-panel-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manga-panel-effect::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(#000 10%, transparent 11%);
+      background-size: 3px 3px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body id="top" class="bg-white text-comic-black font-sans selection:bg-comic-yellow selection:text-comic-black overflow-x-hidden">
+  <header class="fixed top-0 w-full z-50 bg-comic-yellow border-b-8 border-comic-black">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="./index.html#top" aria-label="Go to top of home page" class="flex items-center gap-2">
+        <div class="w-14 h-14 bg-comic-red border-4 border-comic-black comic-shadow-black flex items-center justify-center text-white font-display text-3xl -rotate-6">J</div>
+        <span class="text-2xl font-action tracking-tighter text-comic-black uppercase scale-y-110">justbetterAI<span class="text-comic-red">.tech</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 font-display uppercase tracking-tighter text-sm">
+        <a class="hover:text-comic-red transition-colors" href="./get-started.html">Get Started</a>
+        <a class="hover:text-comic-red transition-colors" href="#lifestyle">Skill Tree</a>
+        <a class="hover:text-comic-red transition-colors" href="#built-by-ai">Origin</a>
+        <a class="hover:text-comic-red transition-colors" href="#journey">Quest Logs</a>
+        <a class="bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all" href="./get-started.html">Get Started</a>
+      </div>
+      <button aria-label="Menu" class="md:hidden p-2 text-comic-black">
+        <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden bg-white py-16 lg:py-28 border-b-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 relative z-10">
+        <div class="lg:w-3/5 text-center lg:text-left z-20">
+          <div class="inline-block px-6 py-2 bg-comic-red text-white border-4 border-comic-black font-action text-xl mb-6 -rotate-2 uppercase tracking-widest comic-shadow-black">
+            Veteran Rebuild Arc
+          </div>
+          <h1 class="text-6xl lg:text-9xl font-action leading-[0.85] tracking-tighter mb-8 text-comic-black italic uppercase">
+            Life, <span class="text-comic-yellow text-outline">Just Better</span> <br />with AI
+          </h1>
+          <div class="speech-bubble p-6 mb-10 max-w-xl mx-auto lg:mx-0 action-skew">
+            <p class="text-xl font-bold italic leading-tight text-comic-black uppercase">
+              A 40-year-old man using AI to improve quality of life, boost energy, sharpen productivity, and become better overall.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center lg:justify-start">
+            <a class="bg-comic-yellow text-comic-black px-8 py-3 border-4 border-comic-black comic-shadow-black font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="#journey">
+              Quest Logs
+            </a>
+            <a class="bg-comic-red text-white px-8 py-3 border-4 border-comic-black comic-shadow-black font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="#lifestyle">
+              Skill Tree
+            </a>
+            <a class="bg-comic-black text-white px-8 py-3 border-4 border-comic-black comic-shadow-red font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="./get-started.html">
+              Start Here
+            </a>
+          </div>
+          <div class="mt-8 inline-block bg-white border-4 border-comic-black comic-shadow-black px-5 py-3">
+            <p class="font-bold text-sm sm:text-base uppercase italic leading-tight">
+              Everything you see here is AI-created and human-directed: the site, images, prompt guides, cheat sheets, and execution systems.
+            </p>
+          </div>
+        </div>
+        <div class="lg:w-2/5 relative hero-contrast">
+          <div class="relative z-10 rotate-3 group">
+            <div class="ink-border-lg comic-shadow-black bg-comic-black overflow-hidden transform group-hover:rotate-0 transition-transform duration-500 relative manga-panel-effect">
+              <img class="w-full h-auto object-cover" src="./me-website-opt.webp" alt="Seinen manga hero portrait" />
+              <div class="absolute inset-0 bg-gradient-to-t from-comic-black/60 via-transparent to-comic-yellow/10"></div>
+            </div>
+            <div class="absolute -top-12 -right-8 w-28 h-28 bg-comic-yellow border-4 border-comic-black rounded-full flex items-center justify-center font-action text-5xl -rotate-12 comic-shadow-black animate-bounce z-20">
+              POW!
+            </div>
+            <div class="absolute -bottom-8 -left-8 w-36 h-20 bg-comic-red border-4 border-comic-black flex items-center justify-center font-action text-4xl text-white rotate-6 comic-shadow-black z-20">
+              SENSEI
+            </div>
+          </div>
+          <div class="manga-lines absolute inset-0 -m-20 pointer-events-none opacity-40"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="basics-entry" class="py-24 bg-comic-yellow relative overflow-hidden border-b-[12px] border-comic-black border-t-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 opacity-20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-14">
+          <h2 class="text-5xl lg:text-6xl font-action text-comic-black mb-4 uppercase tracking-tighter italic">
+            <span class="bg-comic-red text-white px-4">Start Here:</span> Protect Your Time, Boost Energy, Live Better With AI
+          </h2>
+          <div class="h-3 w-80 bg-white mx-auto mb-8 border-2 border-comic-black"></div>
+          <p class="text-comic-black max-w-3xl mx-auto text-2xl font-bold uppercase italic tracking-tight">
+            Before building strategies that empower you, learn the fundamentals first.
+          </p>
+        </div>
+
+        <a href="./get-started.html" class="group bg-white border-8 border-comic-black comic-shadow-black p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 hover:-translate-y-1 hover:-translate-x-1 transition-all duration-300 block">
+          <div class="w-full md:w-1/3 max-w-sm">
+            <div class="w-full aspect-square bg-comic-yellow border-4 border-comic-black overflow-hidden rotate-2 group-hover:rotate-0 transition-transform manga-panel-effect">
+              <img class="w-full h-full object-cover" src="./newtoai-opt.webp" alt="New to AI get started artwork" />
+            </div>
+          </div>
+          <div class="w-full md:w-2/3 text-center md:text-left">
+            <span class="inline-block mb-4 bg-comic-red text-white border-4 border-comic-black px-5 py-2 font-action text-2xl uppercase italic">Get Started</span>
+            <h3 class="text-3xl lg:text-5xl font-action text-comic-black mb-4 uppercase italic leading-none">
+              Learn The Fundamentals Before Advanced Strategy
+            </h3>
+            <p class="text-comic-black font-bold text-xl uppercase italic leading-tight mb-6">
+              Start with prompts, tool selection, and repeatable workflows so your AI strategy actually delivers real-life results.
+            </p>
+            <span class="inline-block bg-comic-black text-white px-8 py-3 border-4 border-comic-black comic-shadow-red font-action text-3xl uppercase italic group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none transition-all">
+              Start The Beginner Guide
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="lifestyle" class="py-24 bg-white relative overflow-hidden">
+      <div class="halftone-pattern absolute inset-0 opacity-5"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-24">
+          <h2 class="text-5xl lg:text-6xl font-action text-comic-black mb-4 uppercase tracking-tighter italic scale-x-95">The <span class="bg-comic-red text-white px-4">Skill Tree</span></h2>
+          <div class="h-3 w-64 bg-comic-yellow mx-auto mb-8 border-2 border-comic-black"></div>
+          <p class="text-comic-black max-w-2xl mx-auto text-2xl font-bold uppercase italic tracking-tight">Turning AI support into real life upgrades, every week.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <a href="./ai-productivity.html" class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-black hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+            <div class="absolute top-0 right-0 p-4 font-action text-comic-red text-6xl opacity-10 group-hover:opacity-20 transition-opacity">01</div>
+            <div class="w-[15rem] h-[15rem] bg-comic-yellow border-4 border-comic-black flex items-center justify-center mb-8 rotate-3 group-hover:rotate-0 transition-transform overflow-hidden manga-panel-effect">
+              <img class="w-full h-full object-cover" src="./meproductive-opt.webp" alt="Productivity avatar" />
+            </div>
+            <h3 class="text-3xl font-action mb-4 uppercase italic">AI Productivity</h3>
+            <p class="text-comic-black font-bold text-lg leading-tight uppercase">Plan better days, execute faster, and finish what matters.</p>
+            <span class="inline-block mt-6 bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic">Open Page</span>
+          </a>
+
+          <a href="./energy-discipline.html" class="group relative p-10 bg-comic-black text-white border-4 border-comic-black comic-shadow-yellow hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+            <div class="absolute top-0 right-0 p-4 font-action text-comic-yellow text-6xl opacity-20">02</div>
+            <div class="w-[15rem] h-[15rem] bg-comic-red border-4 border-white flex items-center justify-center mb-8 -rotate-6 group-hover:rotate-0 transition-transform overflow-hidden manga-panel-effect">
+              <img class="w-full h-full object-cover" src="./energy-discipline-opt.webp" alt="Energy avatar" />
+            </div>
+            <h3 class="text-3xl font-action mb-4 uppercase italic text-comic-yellow">Energy Discipline</h3>
+            <p class="font-bold text-lg leading-tight uppercase">Sleep, recovery, and routines tuned like a pro athlete.</p>
+            <span class="inline-block mt-6 bg-comic-yellow text-comic-black px-6 py-2 border-4 border-comic-black comic-shadow-black font-action text-2xl uppercase italic">Open Page</span>
+          </a>
+
+          <a href="./life-quality.html" class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-red hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+            <div class="absolute top-0 right-0 p-4 font-action text-comic-black text-6xl opacity-10">03</div>
+            <div class="w-[15rem] h-[15rem] bg-white border-4 border-comic-black flex items-center justify-center mb-8 rotate-12 group-hover:rotate-0 transition-transform halftone-yellow overflow-hidden manga-panel-effect">
+              <img class="w-full h-full object-cover" src="./life-quality-opt.webp" alt="Life quality avatar" />
+            </div>
+            <h3 class="text-3xl font-action mb-4 uppercase italic">Life Quality</h3>
+            <p class="text-comic-black font-bold text-lg leading-tight uppercase">Use AI feedback loops to become better overall.</p>
+            <span class="inline-block mt-6 bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic">Open Page</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="built-by-ai" class="py-20 bg-comic-black text-white relative overflow-hidden">
+      <div class="absolute inset-0 manga-lines opacity-10"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-comic-yellow border-[8px] border-comic-black comic-shadow-red p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/3 text-comic-black">
+            <div class="w-64 h-64 mx-auto relative flex items-center justify-center border-8 border-comic-black bg-white rotate-3 comic-shadow-black overflow-hidden">
+              <img class="absolute inset-0 w-full h-full object-cover" src="./focused-opt.webp" alt="AI veteran commander" />
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-center z-10">
+                <span class="block font-action text-8xl leading-none text-white text-outline">100%</span>
+                <span class="block font-action text-3xl text-comic-red italic">FOCUSED</span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/3 text-comic-black">
+            <h2 class="text-4xl lg:text-6xl font-action mb-6 uppercase tracking-tighter leading-none italic">Built With <span class="bg-comic-red text-white px-2">AI End-to-End</span></h2>
+            <p class="text-xl mb-8 leading-none font-bold italic uppercase border-l-8 border-comic-black pl-6">
+              Not just the website shell. The full experience is AI-built: visuals, guides, cheat sheets, and practical systems that run in real life.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div class="bg-white border-4 border-comic-black p-3 font-bold uppercase italic">AI-generated images across every page</div>
+              <div class="bg-white border-4 border-comic-black p-3 font-bold uppercase italic">AI-written prompt guides and tutorials</div>
+              <div class="bg-white border-4 border-comic-black p-3 font-bold uppercase italic">AI-created downloadable cheat sheets</div>
+              <div class="bg-white border-4 border-comic-black p-3 font-bold uppercase italic">AI-assisted workflow systems and templates</div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <span class="px-6 py-3 bg-comic-black text-white font-action text-xl uppercase border-4 border-comic-black comic-shadow-black cursor-default">Quality of Life</span>
+              <span class="px-6 py-3 bg-comic-black text-white font-action text-xl uppercase border-4 border-comic-black comic-shadow-black cursor-default">Daily Momentum</span>
+              <span class="px-6 py-3 bg-comic-black text-white font-action text-xl uppercase border-4 border-comic-black comic-shadow-black cursor-default">AI Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="py-24 bg-white relative border-t-8 border-comic-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
+          <div>
+            <h2 class="text-5xl lg:text-6xl font-action text-comic-black mb-2 uppercase italic">Quest <span class="text-comic-red text-outline">Logs</span></h2>
+            <p class="text-comic-black text-2xl font-bold uppercase italic bg-comic-yellow px-4 py-1 border-4 border-comic-black inline-block">Real progress from a 40-year-old AI learner.</p>
+          </div>
+          <a href="#" class="text-comic-black font-action text-3xl hover:text-comic-red transition-colors group flex items-center uppercase">
+            LOGS <span class="ml-2 group-hover:translate-x-2 transition-transform">&gt;&gt;&gt;</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <article class="bg-white border-8 border-comic-black comic-shadow-black overflow-hidden group">
+            <div class="relative h-96 overflow-hidden border-b-8 border-comic-black manga-panel-effect">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="./main-quest-city-opt.webp" alt="Main quest image" />
+              <div class="absolute top-6 left-6 bg-comic-red text-white font-action px-6 py-2 border-4 border-comic-black comic-shadow-black text-2xl uppercase italic">Main Quest</div>
+            </div>
+            <div class="p-10">
+              <div class="flex gap-6 mb-4">
+                <span class="text-lg font-action uppercase text-comic-red">Log #014</span>
+                <span class="text-lg font-bold text-comic-black uppercase">APR 07, 2026</span>
+              </div>
+              <h3 class="text-4xl lg:text-5xl font-action mb-6 group-hover:text-comic-red transition-colors leading-[0.9] italic uppercase">The Monthly Rebuild Blueprint</h3>
+              <p class="text-comic-black mb-8 font-bold text-xl leading-tight uppercase italic">How AI-driven planning improved energy, output, and consistency across the month.</p>
+              <a href="#" class="inline-block bg-comic-black text-white px-10 py-5 border-4 border-comic-black comic-shadow-yellow font-action text-3xl hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all uppercase italic">Read Log</a>
+            </div>
+          </article>
+
+          <div class="flex flex-col gap-8">
+            <article class="flex flex-col sm:flex-row gap-6 bg-white p-6 border-4 border-comic-black comic-shadow-red hover:-translate-y-1 transition-all group">
+              <div class="w-full sm:w-40 h-40 border-4 border-comic-black shrink-0 overflow-hidden relative manga-panel-effect">
+                <img class="w-full h-full object-cover" src="./veteran-prompting-opt.webp" alt="Prompting tutorial" />
+              </div>
+              <div class="flex flex-col justify-center">
+                <span class="text-sm font-action text-comic-red uppercase mb-1">Tutorial</span>
+                <h4 class="text-3xl font-action mb-2 group-hover:text-comic-red transition-colors uppercase italic leading-none">Veteran Prompting</h4>
+                <p class="text-comic-black font-bold text-lg uppercase leading-tight italic">Build prompts that protect your intent and save time.</p>
+              </div>
+            </article>
+
+            <article class="flex flex-col sm:flex-row gap-6 bg-white p-6 border-4 border-comic-black comic-shadow-yellow hover:-translate-y-1 transition-all group">
+              <div class="w-full sm:w-40 h-40 border-4 border-comic-black shrink-0 overflow-hidden manga-panel-effect">
+                <img class="w-full h-full object-cover" src="./command-center-opt.webp" alt="Workflow log" />
+              </div>
+              <div class="flex flex-col justify-center">
+                <span class="text-sm font-action text-comic-red uppercase mb-1">Workflow</span>
+                <h4 class="text-3xl font-action mb-2 group-hover:text-comic-red transition-colors uppercase italic leading-none">Command Center 1.0</h4>
+                <p class="text-comic-black font-bold text-lg uppercase leading-tight italic">One dashboard for habits, output, and weekly reflection.</p>
+              </div>
+            </article>
+
+            <article class="flex flex-col sm:flex-row gap-6 bg-white p-6 border-4 border-comic-black comic-shadow-black hover:-translate-y-1 transition-all group">
+              <div class="w-full sm:w-40 h-40 border-4 border-comic-black shrink-0 overflow-hidden manga-panel-effect">
+                <img class="w-full h-full object-cover" src="./human-edge-opt.webp" alt="Human edge" />
+              </div>
+              <div class="flex flex-col justify-center">
+                <span class="text-sm font-action text-comic-red uppercase mb-1">Opinion</span>
+                <h4 class="text-3xl font-action mb-2 group-hover:text-comic-red transition-colors uppercase italic leading-none">The Human Edge</h4>
+                <p class="text-comic-black font-bold text-lg uppercase leading-tight italic">AI amplifies effort. Character still decides the outcome.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-comic-black text-white pt-24 pb-12 border-t-[12px] border-comic-yellow relative">
+    <div class="absolute inset-0 halftone-pattern opacity-10"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-10">
+            <div class="w-12 h-12 bg-white text-comic-black border-4 border-comic-yellow flex items-center justify-center font-display text-2xl -rotate-12">J</div>
+            <span class="text-3xl font-action tracking-tighter text-white uppercase italic">justbetterAI.tech</span>
+          </div>
+          <p class="text-white text-xl font-bold uppercase italic leading-tight max-w-sm mb-10 border-l-4 border-comic-red pl-4">
+            Technology should amplify mature discipline, not replace it.
+          </p>
+          <div class="flex gap-8 font-action text-2xl uppercase italic">
+            <a href="#" class="text-comic-yellow hover:text-white transition-colors">Twitter</a>
+            <a href="#" class="text-comic-red hover:text-white transition-colors">Newsletter</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-action text-comic-yellow text-3xl mb-8 uppercase italic border-b-4 border-comic-red inline-block">Systems</h4>
+          <ul class="space-y-4 font-bold uppercase italic text-lg">
+            <li><a href="#" class="hover:text-comic-yellow transition-colors">Productivity</a></li>
+            <li><a href="#" class="hover:text-comic-yellow transition-colors">Energy</a></li>
+            <li><a href="#" class="hover:text-comic-yellow transition-colors">Life Quality</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-action text-comic-yellow text-3xl mb-8 uppercase italic border-b-4 border-comic-red inline-block">Legal</h4>
+          <ul class="space-y-4 font-bold uppercase italic text-lg">
+            <li><a href="#" class="hover:text-comic-red transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-comic-red transition-colors">Ethics Statement</a></li>
+            <li><a href="#" class="hover:text-comic-red transition-colors">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-10 border-t-4 border-white/20 flex flex-col md:flex-row justify-between items-center gap-8 text-white/60 font-action text-xl uppercase italic tracking-widest">
+        <p>? 2026 justbetterAI.tech. BUILT WITH PURPOSE.</p>
+        <p class="flex items-center gap-2">
+          HANDCRAFTED BY <span class="text-comic-red">DISCIPLINE</span> & <span class="text-comic-yellow text-outline">AI</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
