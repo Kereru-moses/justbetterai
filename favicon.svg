@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" fill="#d30000" stroke="#000000" stroke-width="4"/>
+  <text
+    x="32"
+    y="45"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-family="Bungee, Arial Black, sans-serif"
+    font-size="40"
+    font-weight="700"
+  >J</text>
+</svg>
