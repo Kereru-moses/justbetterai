@@ -1,4 +1,5 @@
 .npm-cache/
+node_modules/
 .env
 .env.*
 newsletter-config.php
