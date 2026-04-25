@@ -404,8 +404,10 @@
                 <p class="font-bold text-2xl md:text-3xl uppercase italic leading-tight text-comic-black">Use AI to get sharper, faster, and more in control.</p>
                 <p class="font-bold text-2xl md:text-3xl uppercase italic leading-tight text-comic-black">Start now, or get left behind.</p>
               </div>
-              <form id="upgradedManOptinForm" action="https://YOUR_EMAIL_SERVICE_ENDPOINT" method="post" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 text-left">
+              <form id="upgradedManOptinForm" action="./newsletter-signup.php" method="post" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 text-left">
                 <input type="hidden" name="newsletter" value="The Upgraded Man" />
+                <input type="hidden" name="list_name" value="theupgradedman" />
+                <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
                 <div>
                   <label for="optinFirstName" class="block font-bold uppercase italic text-sm mb-2">First Name</label>
                   <input id="optinFirstName" name="first_name" type="text" autocomplete="given-name" class="w-full border-4 border-comic-black bg-white px-4 py-3 font-bold" placeholder="Your first name" />
