@@ -671,6 +671,22 @@
     </div>
   </div>
 
+  <div id="newsletterStatusModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6" aria-hidden="true">
+    <div class="absolute inset-0 bg-comic-black/80" data-newsletter-close></div>
+    <div id="newsletterStatusPanel" role="dialog" aria-modal="true" aria-labelledby="newsletterStatusTitle" class="guide-modal-panel relative w-full max-w-2xl bg-white border-8 border-comic-black comic-shadow-yellow p-6 sm:p-8">
+      <p id="newsletterStatusBadge" class="inline-block bg-comic-black text-white px-4 py-2 border-4 border-comic-black font-action text-2xl uppercase italic mb-4">Newsletter</p>
+      <h2 id="newsletterStatusTitle" class="text-4xl sm:text-5xl font-action uppercase italic leading-none mb-4">Status</h2>
+      <p id="newsletterStatusMessage" class="font-bold text-lg uppercase italic leading-tight border-l-8 border-comic-red pl-4 mb-6">
+        Thanks for subscribing.
+      </p>
+      <div class="flex justify-end">
+        <button id="closeNewsletterStatusBtn" type="button" class="bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
   <footer class="bg-white text-comic-black py-10 border-t-[12px] border-comic-yellow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="font-action text-xl uppercase italic tracking-widest">&copy; 2026 justbetterAI.tech</p>
@@ -696,12 +712,12 @@
       const bindModal = function (config) {
         const modal = document.getElementById(config.modalId);
         const closeBtn = document.getElementById(config.closeId);
-        const openBtns = config.openIds
+        const openBtns = (config.openIds || [])
           .map(function (id) { return document.getElementById(id); })
           .filter(function (btn) { return Boolean(btn); });
 
-        if (!modal || !closeBtn || openBtns.length === 0) {
-          return;
+        if (!modal || !closeBtn) {
+          return null;
         }
 
         const openModal = function () {
@@ -709,6 +725,7 @@
           modal.classList.add("flex");
           modal.setAttribute("aria-hidden", "false");
           updateBodyLock();
+          closeBtn.focus();
         };
 
         const closeModal = function () {
@@ -736,6 +753,7 @@
         });
 
         modalEntries.push({ modal: modal });
+        return { open: openModal, close: closeModal, modal: modal };
       };
 
       bindModal({
@@ -751,6 +769,84 @@
         closeId: "closeUseCasesBtn",
         overlayAttribute: "data-use-cases-close"
       });
+
+      const newsletterModal = bindModal({
+        modalId: "newsletterStatusModal",
+        openIds: [],
+        closeId: "closeNewsletterStatusBtn",
+        overlayAttribute: "data-newsletter-close"
+      });
+
+      const newsletterStatusMap = {
+        ok: {
+          title: "You Are Subscribed",
+          message: "You are now on The Upgraded Man newsletter. Check your inbox for updates.",
+          panelShadow: "comic-shadow-yellow",
+          badgeClass: "bg-comic-black text-white"
+        },
+        invalid_email: {
+          title: "Email Not Valid",
+          message: "Please enter a valid email address and submit again.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        invalid_method: {
+          title: "Submit Error",
+          message: "That request was not accepted. Please submit through the form.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        config_error: {
+          title: "Signup Temporarily Unavailable",
+          message: "Newsletter signup is not configured correctly right now. Please try again soon.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        request_error: {
+          title: "Network Error",
+          message: "We could not reach the newsletter service. Please try again in a moment.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        api_error: {
+          title: "Signup Failed",
+          message: "The newsletter service returned an error. Please try again shortly.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        payload_error: {
+          title: "Signup Failed",
+          message: "We could not prepare your signup data. Please submit again.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        }
+      };
+
+      const newsletterTitle = document.getElementById("newsletterStatusTitle");
+      const newsletterMessage = document.getElementById("newsletterStatusMessage");
+      const newsletterPanel = document.getElementById("newsletterStatusPanel");
+      const newsletterBadge = document.getElementById("newsletterStatusBadge");
+      const currentUrl = new URL(window.location.href);
+      const newsletterStatus = currentUrl.searchParams.get("newsletter");
+      const newsletterConfig = newsletterStatusMap[newsletterStatus || ""];
+
+      if (newsletterConfig && newsletterModal && newsletterTitle && newsletterMessage && newsletterPanel && newsletterBadge) {
+        newsletterTitle.textContent = newsletterConfig.title;
+        newsletterMessage.textContent = newsletterConfig.message;
+
+        newsletterPanel.classList.remove("comic-shadow-yellow", "comic-shadow-red");
+        newsletterPanel.classList.add(newsletterConfig.panelShadow);
+
+        newsletterBadge.classList.remove("bg-comic-black", "bg-comic-red", "text-white");
+        newsletterBadge.classList.add.apply(newsletterBadge.classList, newsletterConfig.badgeClass.split(" "));
+
+        newsletterModal.open();
+
+        currentUrl.searchParams.delete("newsletter");
+        const nextSearch = currentUrl.searchParams.toString();
+        const nextUrl = currentUrl.pathname + (nextSearch ? "?" + nextSearch : "") + currentUrl.hash;
+        window.history.replaceState({}, "", nextUrl);
+      }
 
     })();
   </script>
