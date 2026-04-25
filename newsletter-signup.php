@@ -1,6 +1,29 @@
 <?php
 declare(strict_types=1);
 
+/**
+ * Load local project config when present (kept out of git).
+ * Expected file: newsletter-config.php returning an associative array.
+ */
+$localConfig = [];
+$localConfigPath = __DIR__ . '/newsletter-config.php';
+if (is_file($localConfigPath)) {
+    $loadedConfig = require $localConfigPath;
+    if (is_array($loadedConfig)) {
+        $localConfig = $loadedConfig;
+    }
+}
+
+function get_newsletter_config(string $key, array $localConfig): string
+{
+    $localValue = trim((string)($localConfig[$key] ?? ''));
+    if ($localValue !== '') {
+        return $localValue;
+    }
+
+    return trim((string)getenv($key));
+}
+
 function redirect_with_status(string $status): void
 {
     header('Location: ./get-started.html?newsletter=' . rawurlencode($status) . '#newsletter-signup', true, 303);
@@ -24,18 +47,18 @@ if ($email === false) {
 
 $firstName = trim((string)($_POST['first_name'] ?? ''));
 
-$apiBaseUrl = trim((string)getenv('NEWSLETTER_API_BASE_URL'));
+$apiBaseUrl = get_newsletter_config('NEWSLETTER_API_BASE_URL', $localConfig);
 if ($apiBaseUrl === '') {
     $apiBaseUrl = 'https://developers.hostinger.com';
 }
 
-$profileUuid = trim((string)getenv('NEWSLETTER_PROFILE_UUID'));
+$profileUuid = get_newsletter_config('NEWSLETTER_PROFILE_UUID', $localConfig);
 if ($profileUuid === '') {
     $profileUuid = '550e8400-e09b-41d4-a716-400055000000';
 }
 
 $apiEndpoint = rtrim($apiBaseUrl, '/') . '/api/reach/v1/profiles/' . rawurlencode($profileUuid) . '/contacts';
-$apiKey = trim((string)getenv('NEWSLETTER_API_KEY'));
+$apiKey = get_newsletter_config('NEWSLETTER_API_KEY', $localConfig);
 if ($apiKey === '') {
     error_log('Newsletter signup config missing: NEWSLETTER_API_KEY');
     redirect_with_status('config_error');
