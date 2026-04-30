@@ -54,7 +54,8 @@ if ($apiBaseUrl === '') {
 
 $profileUuid = get_newsletter_config('NEWSLETTER_PROFILE_UUID', $localConfig);
 if ($profileUuid === '') {
-    $profileUuid = '550e8400-e09b-41d4-a716-400055000000';
+    error_log('Newsletter signup config missing: NEWSLETTER_PROFILE_UUID');
+    redirect_with_status('config_error');
 }
 
 $apiEndpoint = rtrim($apiBaseUrl, '/') . '/api/reach/v1/profiles/' . rawurlencode($profileUuid) . '/contacts';
