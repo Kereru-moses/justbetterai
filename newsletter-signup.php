@@ -24,9 +24,39 @@ function get_newsletter_config(string $key, array $localConfig): string
     return trim((string)getenv($key));
 }
 
+function get_redirect_target(): string
+{
+    $defaultTarget = './get-started/index.html#newsletter-signup';
+    $rawTarget = trim((string)($_POST['newsletter_redirect'] ?? ''));
+
+    if ($rawTarget === '') {
+        return $defaultTarget;
+    }
+
+    // Keep redirects local-only and relative to this site.
+    if (str_contains($rawTarget, '://') || str_starts_with($rawTarget, '//') || preg_match('/[\r\n\\\\]/', $rawTarget)) {
+        return $defaultTarget;
+    }
+
+    if (!str_starts_with($rawTarget, './') && !str_starts_with($rawTarget, '/')) {
+        return $defaultTarget;
+    }
+
+    return $rawTarget;
+}
+
 function redirect_with_status(string $status): void
 {
-    header('Location: ./get-started/index.html?newsletter=' . rawurlencode($status) . '#newsletter-signup', true, 303);
+    $target = get_redirect_target();
+    $hash = '';
+    $hashPos = strpos($target, '#');
+    if ($hashPos !== false) {
+        $hash = substr($target, $hashPos);
+        $target = substr($target, 0, $hashPos);
+    }
+
+    $separator = str_contains($target, '?') ? '&' : '?';
+    header('Location: ' . $target . $separator . 'newsletter=' . rawurlencode($status) . $hash, true, 303);
     exit;
 }
 

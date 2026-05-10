@@ -108,8 +108,25 @@
       animation: modal-pop 180ms ease-out;
     }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '312552627871985');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 </head>
-<body id="top" class="bg-white text-comic-black font-sans selection:bg-comic-yellow selection:text-comic-black overflow-x-hidden">
+
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=312552627871985&ev=PageView&noscript=1"
+  /></noscript>
   <header class="fixed top-0 w-full z-50 bg-comic-yellow border-b-8 border-comic-black">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="./index.html#top" aria-label="Go to top of home page" class="flex items-center gap-2">
