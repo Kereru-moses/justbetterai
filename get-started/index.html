@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started With AI | justbetterAI.tech</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../styles/tailwind.css" />
+  <link rel="preload" href="../styles/fonts/lato-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../styles/fonts/poppins-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../styles/fonts.css" />
+  <style>
+    .halftone-pattern {
+      background-image: radial-gradient(#000 15%, transparent 16%);
+      background-size: 10px 10px;
+      opacity: 0.1;
+    }
+
+    .ink-border-lg {
+      border: 6px solid #000;
+    }
+
+    .comic-shadow-red {
+      box-shadow: 10px 10px 0 0 #d30000;
+    }
+
+    .comic-shadow-black {
+      box-shadow: 10px 10px 0 0 #000;
+    }
+
+    .comic-shadow-yellow {
+      box-shadow: 10px 10px 0 0 #ffff00;
+    }
+
+    .text-outline {
+      -webkit-text-stroke: 1.5px black;
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: #fff;
+      border: 4px solid #000;
+    }
+
+    .speech-bubble:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 18px solid transparent;
+      border-top-color: #000;
+      border-bottom: 0;
+      border-left: 0;
+      margin-left: -9px;
+      margin-bottom: -18px;
+    }
+
+    .action-skew {
+      transform: skew(-5deg);
+    }
+
+    .manga-panel-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manga-panel-effect::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(#000 10%, transparent 11%);
+      background-size: 3px 3px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    @keyframes modal-pop {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .guide-modal-panel {
+      animation: modal-pop 180ms ease-out;
+    }
+
+  </style>
+</head>
+<body class="bg-white text-comic-black font-sans selection:bg-comic-yellow selection:text-comic-black overflow-x-hidden">
+  <header class="fixed top-0 w-full z-50 bg-comic-yellow border-b-8 border-comic-black">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="../index.html#top" aria-label="Go to top of home page" class="flex items-center gap-2">
+        <div class="w-14 h-14 bg-comic-red border-4 border-comic-black comic-shadow-black flex items-center justify-center text-white font-display text-3xl -rotate-6">J</div>
+        <span class="text-2xl font-action tracking-tighter text-comic-black uppercase scale-y-110">justbetterAI<span class="text-comic-red">.tech</span></span>
+      </a>
+      <div class="flex items-center gap-4 sm:gap-8 font-display uppercase tracking-tighter text-xs sm:text-sm">
+        <a class="bg-comic-black text-white px-4 sm:px-6 py-2 border-4 border-comic-black comic-shadow-red hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all" href="../index.html">Back Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden bg-comic-yellow py-16 lg:py-24 border-b-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 pointer-events-none opacity-20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-3/5">
+            <div class="inline-block px-6 py-2 bg-comic-red text-white border-4 border-comic-black font-action text-xl mb-6 -rotate-2 uppercase tracking-widest comic-shadow-black">
+              Start Here
+            </div>
+            <h1 class="text-6xl lg:text-8xl font-action leading-[0.85] tracking-tighter mb-8 text-comic-black italic uppercase">
+              Get Started <span class="text-white text-outline">With AI</span>
+            </h1>
+            <p class="text-xl font-bold italic leading-tight text-comic-black uppercase border-l-8 border-comic-black pl-6 max-w-xl">
+              If AI feels noisy or confusing, start here. Learn the core moves that save time, reduce mental load, and improve daily execution.
+            </p>
+            <div class="mt-8 inline-block bg-white border-4 border-comic-black comic-shadow-black px-5 py-3">
+              <p class="font-bold text-sm sm:text-base uppercase italic leading-tight">
+                Everything on this page is AI-created and human-directed: the guide, cheat sheet, imagery, and workflow system.
+              </p>
+            </div>
+          </div>
+          <div class="lg:w-2/5 relative">
+            <div class="relative z-10 rotate-3 group">
+              <div class="ink-border-lg comic-shadow-black bg-comic-black overflow-hidden transform group-hover:rotate-0 transition-transform duration-500 relative manga-panel-effect">
+                <img class="w-full h-auto object-cover" src="./newtoai-opt.webp" alt="New to AI starter profile" />
+                <div class="absolute inset-0 bg-gradient-to-t from-comic-black/60 via-transparent to-comic-yellow/10"></div>
+              </div>
+              <div class="absolute -top-12 -right-8 w-28 h-28 bg-white border-4 border-comic-black rounded-full flex items-center justify-center font-action text-4xl -rotate-12 comic-shadow-black animate-bounce z-20">
+                START!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="halftone-pattern absolute inset-0 opacity-5"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <article class="bg-comic-red text-white border-8 border-comic-black comic-shadow-black p-8 md:p-10 mb-12">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-2">
+              <h2 class="text-4xl md:text-5xl font-action uppercase italic leading-none mb-4 text-comic-yellow">Starter Toolkit</h2>
+              <p class="font-bold text-xl uppercase italic leading-tight mb-6">
+                Every AI chat is a prompt. Better prompts get better answers.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+                  <span class="block font-action text-2xl text-comic-red uppercase mb-2">1</span>
+                  <p class="font-bold uppercase italic leading-tight">Start here: learn the prompt structure.</p>
+                </div>
+                <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+                  <span class="block font-action text-2xl text-comic-red uppercase mb-2">2</span>
+                  <p class="font-bold uppercase italic leading-tight">Grab the cheat sheet for quick daily use.</p>
+                </div>
+                <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+                  <span class="block font-action text-2xl text-comic-red uppercase mb-2">3</span>
+                  <p class="font-bold uppercase italic leading-tight">Use it on one real task, then save what works.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <button id="openPromptGuideBtn" type="button" class="bg-comic-yellow text-comic-black px-6 py-4 border-4 border-comic-black comic-shadow-black font-action text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-left">
+                Step 1: Prompt Guide
+              </button>
+              <a href="../elite_prompting_cheatsheet.pdf" download class="bg-white text-comic-black px-6 py-4 border-4 border-comic-black comic-shadow-yellow font-action text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                Step 2: Prompt Cheat Sheet
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-comic-black text-white border-8 border-comic-black comic-shadow-yellow p-6 md:p-8">
+          <h2 class="text-3xl md:text-4xl font-action uppercase italic text-comic-yellow mb-4">What AI To Use First</h2>
+            <p class="font-bold text-lg uppercase italic leading-tight mb-6 border-l-8 border-comic-yellow pl-4">
+              I have tried them all, and I have found ChatGPT to be the best value all-rounder for price, quality, and day-to-day use. Start free, then move to Plus when AI becomes part of your daily workflow.
+            </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-lg uppercase mb-2">Why GPT</span>
+              <p class="font-bold uppercase italic leading-tight text-sm">From my testing, ChatGPT has been the best value all-rounder: strong output quality, broad capability, and reliable everyday performance.</p>
+            </div>
+            <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-lg uppercase mb-2">Start Free</span>
+              <p class="font-bold uppercase italic leading-tight text-sm">Go to chatgpt.com, sign in, and start on the free plan while you build your prompting habit.</p>
+            </div>
+            <div class="bg-white text-comic-black border-4 border-comic-black p-4">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-lg uppercase mb-2">How To Start</span>
+              <p class="font-bold uppercase italic leading-tight text-sm">Use the prompt guide first, keep the cheat sheet open, and run one real task every day.</p>
+            </div>
+            <div class="bg-comic-yellow text-comic-black border-4 border-comic-black p-4">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-lg uppercase mb-2">Upgrade To Plus</span>
+              <p class="font-bold uppercase italic leading-tight text-sm">Free gets you started. Plus changes the game once you are using AI seriously: broader capability, higher limits, and more consistent day-to-day output.</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-comic-yellow text-comic-black px-8 py-3 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+              Start with GPT here
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-24 bg-comic-red relative overflow-hidden border-t-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 opacity-20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <article class="bg-white border-8 border-comic-black comic-shadow-black p-8 md:p-10">
+          <h2 class="text-4xl md:text-5xl font-action uppercase italic text-comic-black mb-4">
+            What I Actually <span class="bg-comic-yellow px-3">Use AI For</span>
+          </h2>
+          <p class="text-comic-black font-bold text-xl uppercase italic leading-tight mb-6 border-l-8 border-comic-red pl-4">
+            Real daily use, not theory. These are the exact tasks where AI saves me time and improves output.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <article class="bg-comic-yellow border-4 border-comic-black p-4">
+              <div class="border-4 border-comic-black overflow-hidden mb-3 h-64">
+                <img class="w-full h-full object-cover" src="./personal-ai-opt.webp" alt="Personal AI workflow visual" />
+              </div>
+              <h3 class="font-action text-3xl uppercase italic leading-none mb-2">Personal AI</h3>
+              <p class="font-action text-2xl uppercase italic leading-tight mb-2">Personal: more energy. More time. A stronger, sharper version of you.</p>
+              <p class="font-bold uppercase italic leading-tight">Real-world examples: coaching feedback, workouts, meal plans, learning, and daily brain-dump clarity.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black p-4">
+              <div class="border-4 border-comic-black overflow-hidden mb-3 h-64">
+                <img class="w-full h-full object-cover" src="./work-ai-opt.webp" alt="Work AI workflow visual" />
+              </div>
+              <h3 class="font-action text-3xl uppercase italic leading-none mb-2">Work AI</h3>
+              <p class="font-action text-2xl uppercase italic leading-tight mb-2">Work: work easier. Offload simple tasks. Become more valuable.</p>
+              <p class="font-bold uppercase italic leading-tight">Real-world examples: email automation, calendar blocking, meetings to tasks, and content production pipelines.</p>
+            </article>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button id="openUseCasesBtn" type="button" class="bg-comic-black text-white px-8 py-4 border-4 border-comic-black comic-shadow-red font-action text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+              See Real-World AI Use Cases
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-24 bg-white relative overflow-hidden border-t-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 opacity-5"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2 class="text-4xl md:text-6xl font-action uppercase italic text-comic-black mb-4 text-center">
+          How AI Flows Through <span class="bg-comic-yellow px-3">My Day</span>
+        </h2>
+        <p class="text-comic-black font-bold text-lg uppercase italic leading-tight text-center max-w-4xl mx-auto mb-8">
+          This flow is powered by AI, with agents checking in throughout the day to keep me moving.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="bg-white border-4 border-comic-black comic-shadow-black p-4">
+            <div class="relative border-4 border-comic-black overflow-hidden h-52 mb-3">
+              <img class="w-full h-full object-cover" src="./morning-energy-opt.webp" alt="Morning planning placeholder" />
+              <span class="absolute top-2 left-2 bg-comic-red text-white border-2 border-comic-black px-2 py-1 font-action text-sm uppercase">Morning</span>
+            </div>
+            <p class="font-bold uppercase italic leading-tight">Morning routine, workout plan, made by AI. I tick it off when done.</p>
+          </article>
+          <article class="bg-comic-yellow border-4 border-comic-black comic-shadow-black p-4">
+            <div class="relative border-4 border-comic-black overflow-hidden h-52 mb-3">
+              <img class="w-full h-full object-cover" src="./midday-focus-opt.webp" alt="Midday focus visual" />
+              <span class="absolute top-2 left-2 bg-comic-red text-white border-2 border-comic-black px-2 py-1 font-action text-sm uppercase">Midday</span>
+            </div>
+            <p class="font-bold uppercase italic leading-tight">Reset, refocus, refresh - AI helps.</p>
+          </article>
+          <article class="bg-white border-4 border-comic-black comic-shadow-black p-4">
+            <div class="relative border-4 border-comic-black overflow-hidden h-52 mb-3">
+              <img class="w-full h-full object-cover" src="./afternoon-execution-opt.webp" alt="Afternoon execution and progress planning scene" />
+              <span class="absolute top-2 left-2 bg-comic-red text-white border-2 border-comic-black px-2 py-1 font-action text-sm uppercase">Afternoon</span>
+            </div>
+            <p class="font-bold uppercase italic leading-tight">Monitor progress. Check I'm on track.</p>
+          </article>
+          <article class="bg-comic-yellow border-4 border-comic-black comic-shadow-black p-4">
+            <div class="relative border-4 border-comic-black overflow-hidden h-52 mb-3">
+              <img class="w-full h-full object-cover" src="./evening-winddown-opt.webp" alt="Evening winddown and personal reset scene" />
+              <span class="absolute top-2 left-2 bg-comic-red text-white border-2 border-comic-black px-2 py-1 font-action text-sm uppercase">Evening</span>
+            </div>
+            <p class="font-bold uppercase italic leading-tight">Plan the next day. Winddown routine.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-comic-black relative overflow-hidden border-t-[12px] border-comic-yellow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-16">
+          <h2 class="text-5xl lg:text-7xl font-action text-white mb-8 uppercase italic text-center">
+            Pick The AI Tool For <span class="bg-comic-yellow text-comic-black px-4">Your Next Win</span>
+          </h2>
+          <p class="text-center text-comic-yellow font-bold text-xl uppercase italic leading-tight max-w-4xl mx-auto mb-8 border-4 border-comic-yellow bg-comic-black/60 px-4 py-3">
+            No tech maze. Pick by outcome: think clearer, get time back, create faster, and build unstoppable momentum.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <article class="bg-comic-yellow border-4 border-comic-black comic-shadow-red p-6 w-full max-w-md mx-auto h-full xl:row-span-2 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <div class="relative border-4 border-comic-black overflow-hidden aspect-square w-full mb-4">
+                <img class="w-full h-full object-contain" src="./agents-apps-timeback-opt.webp" alt="Agents and apps automation workflow visual" />
+                <span class="absolute bottom-0 left-0 bg-comic-red text-white border-2 border-comic-black px-4 py-2 font-action text-xl uppercase">The Ultimate Setup</span>
+              </div>
+              <h3 class="text-4xl font-action text-comic-black mb-3 uppercase italic leading-none">Agents + Apps = Time Back</h3>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Connect email, tasks, and calendar so AI does the repetitive setup work and you stay in execution mode.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">LLM</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Get unstuck fast. Turn mental noise into clear plans, sharp messages, and confident next moves.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">Agents</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Kill repetitive grind. Hand off multi-step tasks and get your time and focus back.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">Custom GPT</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Build your own AI right hand. Get answers in your style, for your role, with your workflow baked in.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">Projects</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Stop starting from scratch. Keep chats, files, and decisions together so progress compounds daily.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">Image AI</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Look pro without a design bottleneck. Create scroll-stopping visuals for posts, ideas, and decks in minutes.</p>
+            </article>
+            <article class="bg-white border-4 border-comic-black comic-shadow-black p-6 h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none transition-all duration-300">
+              <span class="inline-block bg-comic-red text-white border-2 border-comic-black px-3 py-1 font-action text-xl uppercase mb-3">Video AI</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Create faster without burnout. Draft explainers and short videos quickly, then polish instead of starting from zero.</p>
+            </article>
+          </div>
+        </div>
+
+        <article class="bg-comic-yellow border-8 border-comic-black comic-shadow-black p-8 md:p-10">
+          <h2 class="text-4xl md:text-5xl font-action mb-4 uppercase italic text-comic-black">Your First 3 Wins</h2>
+          <p class="text-comic-black font-bold text-xl uppercase italic leading-tight mb-6 border-l-8 border-comic-black pl-4">
+            Do this once, and you will feel momentum fast. Do it daily, and your results stack.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white border-4 border-comic-black p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none comic-shadow-black transition-all duration-300">
+              <span class="block font-action text-3xl text-comic-red uppercase mb-2">Step 1: Pick The Pain</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Choose one daily frustration that slows you down: planning chaos, focus drift, communication drag, or inconsistency.</p>
+            </div>
+            <div class="bg-white border-4 border-comic-black p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none comic-shadow-black transition-all duration-300">
+              <span class="block font-action text-3xl text-comic-red uppercase mb-2">Step 2: Run A 10-Min Test</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Use the prompt guide, run three versions, and keep the one that gives clear output you can act on immediately.</p>
+            </div>
+            <div class="bg-white border-4 border-comic-black p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-none comic-shadow-black transition-all duration-300">
+              <span class="block font-action text-3xl text-comic-red uppercase mb-2">Step 3: Lock In The Win</span>
+              <p class="text-comic-black font-bold text-lg uppercase italic leading-tight">Save your winning prompt as a template and run it daily for seven days so progress compounds.</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button id="openPromptGuideBtnSecondary" type="button" class="inline-block bg-comic-red text-white px-10 py-4 border-4 border-comic-black comic-shadow-black font-action text-3xl uppercase italic hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all">
+              Open Prompt Guide
+            </button>
+            <a href="../elite_prompting_cheatsheet.pdf" download class="inline-block bg-white text-comic-black px-10 py-4 border-4 border-comic-black comic-shadow-black font-action text-3xl uppercase italic hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all">
+              Prompt Cheat Sheet
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="newsletter-signup" class="py-16 bg-comic-yellow relative overflow-hidden border-t-[12px] border-comic-black">
+      <div class="halftone-pattern absolute inset-0 opacity-10"></div>
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <article class="relative bg-white border-8 border-comic-black comic-shadow-black p-5 md:p-7 pt-11 md:pt-12">
+          <p class="absolute -top-6 left-6 md:left-8 bg-comic-red text-white px-4 py-2 border-4 border-comic-black font-action text-2xl uppercase italic z-20">
+            Newsletter
+          </p>
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
+            <div class="lg:col-span-3">
+              <p class="text-3xl md:text-4xl font-display uppercase italic leading-none text-comic-black mb-2">
+                The Upgraded Man
+              </p>
+              <div class="mb-4 md:mb-3 space-y-0.5 text-center md:text-left">
+                <p class="font-bold text-2xl md:text-3xl uppercase italic leading-tight text-comic-black">Take the advantage.</p>
+                <p class="font-bold text-2xl md:text-3xl uppercase italic leading-tight text-comic-black">Use AI to get sharper, faster, and more in control.</p>
+                <p class="font-bold text-2xl md:text-3xl uppercase italic leading-tight text-comic-black">Start now, or get left behind.</p>
+              </div>
+              <form id="upgradedManOptinForm" action="../newsletter-signup.php" method="post" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 text-left">
+                <input type="hidden" name="newsletter" value="The Upgraded Man" />
+                <input type="hidden" name="list_name" value="theupgradedman" />
+                <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+                <div>
+                  <label for="optinFirstName" class="block font-bold uppercase italic text-sm mb-2">First Name</label>
+                  <input id="optinFirstName" name="first_name" type="text" autocomplete="given-name" class="w-full border-4 border-comic-black bg-white px-4 py-3 font-bold" placeholder="Your first name" />
+                </div>
+                <div>
+                  <label for="optinEmail" class="block font-bold uppercase italic text-sm mb-2">Email</label>
+                  <input id="optinEmail" name="email" type="email" autocomplete="email" required class="w-full border-4 border-comic-black bg-white px-4 py-3 font-bold" placeholder="you@example.com" />
+                </div>
+                <div class="md:col-span-2 flex justify-end pt-0.5">
+                  <button type="submit" class="bg-comic-black text-white px-7 md:px-8 py-2.5 md:py-3 border-4 border-comic-black comic-shadow-red font-action text-2xl md:text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                    Join The Upgraded Man
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="lg:col-span-2">
+              <div class="h-full border-4 border-comic-black comic-shadow-black overflow-hidden bg-comic-black min-h-[280px] lg:min-h-[360px]">
+                <img class="w-full h-full object-cover" src="./upgraded-man-opt.jpg" alt="The Upgraded Man transformation visual" />
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="useCasesModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6" aria-hidden="true">
+    <div class="absolute inset-0 bg-comic-black/80" data-use-cases-close></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="useCasesTitle" class="guide-modal-panel relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-white border-8 border-comic-black comic-shadow-yellow p-6 sm:p-8">
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <h2 id="useCasesTitle" class="text-3xl sm:text-4xl font-action uppercase italic leading-none">Real-World AI Use Cases I Rely On</h2>
+        <button id="closeUseCasesBtn" type="button" class="shrink-0 bg-comic-black text-white px-4 py-2 border-4 border-comic-black font-action text-2xl uppercase italic">Close</button>
+      </div>
+      <p class="text-comic-black font-bold text-lg uppercase italic leading-tight border-l-8 border-comic-red pl-4 mb-6">
+        If someone asks "what would I even use AI for?", this is my practical list.
+      </p>
+      <p class="text-comic-black font-bold text-base uppercase italic leading-tight mb-6">
+        These are repeatable workflows: I give context, ask AI to organize or execute, then confirm it understands and answer clarification questions.
+      </p>
+      <section class="mb-8">
+        <h3 class="font-action text-3xl uppercase italic text-comic-red mb-4">Personal AI Use Cases</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Creating Money (LLM + Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> My interests, strengths, available time, budget, and income goal.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I ask AI to generate beginner-friendly money ideas, pick the best one for me, map the core skills to learn first, and build a simple week-by-week action plan. Then I ask it to confirm understanding and ask clarification questions.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> A clear starting path from zero: what to learn, what to build first, and what to do each week to start creating income.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Brain Dump To Clarity (LLM)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Everything in my head with no structure.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I give all my thoughts in one dump, ask AI to organize what matters now, what can wait, and what to ignore, then ask it to confirm understanding and ask clarification questions.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Mental clarity and lower overwhelm in minutes.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Daily To-Do Sorting (Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I connect:</span> Task list + calendar.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I sync tasks and calendar, ask AI to sort by priority, effort, and deadlines, then adjust for my real time and energy before I run the order.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> A clean daily execution order without manual sorting.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Workout Planner (LLM)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Training days, workout duration, available equipment, experience level, and fitness goals.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I share training days, session length, and goals, then have AI structure the week and refine sessions around constraints or injuries.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> A practical workout structure I can follow immediately.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Learning and Skill Building (LLM Coach)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> My level, goal, and where I keep getting stuck.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I explain my current level and sticking points, then have AI break the skill into steps, drills, and a short practice cycle for this week.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Practical progress instead of random learning.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Coaching Feedback From My Boards (Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I connect:</span> My tracking boards and daily logs.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I connect board data and logs, have AI review trends and slippage, then pull out the top changes to apply this week.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Honest coaching feedback plus clear improvement actions.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Meal Planning and Recipes (LLM)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Goals, calorie target, ingredients, and available time.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I share goals, calories, available ingredients, and time constraints, then have AI build a weekly plan and shopping list I can actually follow.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Better nutrition decisions with less daily friction.</p>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h3 class="font-action text-3xl uppercase italic text-comic-red mb-4">Work AI Use Cases</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Calendar Auto-Blocking (Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I connect:</span> Calendar + task list.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I connect tasks and calendar, let AI draft focus blocks with buffers, then review around fixed meetings and deadlines.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> A ready-to-run week without manual scheduling.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Email Writing + Replies (Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I connect:</span> Email + calendar + tasks.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I connect email, calendar, and tasks, then use AI to draft replies in my tone, suggest send order, and create follow-up reminders.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Faster inbox processing and fewer dropped threads.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Meetings To Action (LLM + Agent)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Meeting transcript or notes.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I drop in meeting transcript or notes, have AI extract decisions, owners, and deadlines, then push actions into my planner.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Clean summary plus assigned actions in my system.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Content Pipeline (LLM)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Topic, audience, offer, and channel.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I share topic, audience, offer, and channel, then have AI build hooks, outline, draft, CTA, and repurpose plan as one pipeline.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> A repeatable publishing workflow instead of random posting.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Video To Assets (Specialized AI)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> One long video or webinar recording.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I upload one long recording, then use AI tools to cut clips, captions, key quotes, and summary assets for multiple channels.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Multi-format content from one source file.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Infographics + Visual Explainers (Design AI)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Raw script, stats, and visual style direction.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I provide script, stats, and style direction, then have design AI map headline, sections, and visual cues into a shareable layout.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Shareable visual content without starting from a blank canvas.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Data and Spreadsheets (Analysis AI)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> CSV or spreadsheet with business or habit data.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I upload CSV or spreadsheet data, ask AI to identify trends and outliers, then turn findings into concrete actions for this week.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Clear insights and decisions instead of raw numbers.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Research and Comparison (LLM)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Decision criteria, budget, and constraints.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I give decision criteria, budget, and constraints, then have AI compare options, surface tradeoffs, and rank best-fit choices.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Faster decisions with clearer reasoning.</p>
+          </article>
+          <article class="border-4 border-comic-black p-4">
+            <h4 class="font-action text-2xl uppercase italic mb-2">Code and Workflow Automation (Coding AI)</h4>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">What I give:</span> Repetitive process steps and current tool stack.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight mb-2"><span class="text-comic-red">How I run it:</span> I map manual workflow steps and current tools, then use coding AI to draft automations and iterate until the process is reliable.</p>
+            <p class="font-bold text-sm uppercase italic leading-tight"><span class="text-comic-red">What I get:</span> Time back through repeatable systems.</p>
+          </article>
+        </div>
+      </section>
+      <p class="mt-6 text-comic-black font-bold text-base uppercase italic leading-tight">
+        Different AI for different jobs: use personal AI for life clarity, and work AI for execution and production.
+      </p>
+    </div>
+  </div>
+
+  <div id="promptGuideModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6" aria-hidden="true">
+    <div class="absolute inset-0 bg-comic-black/80" data-guide-close></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="promptGuideTitle" class="guide-modal-panel relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white border-8 border-comic-black comic-shadow-red p-6 sm:p-8">
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <h2 id="promptGuideTitle" class="text-3xl sm:text-4xl font-action uppercase italic leading-none">AI Prompting for Men 40+</h2>
+        <button id="closePromptGuideBtn" type="button" class="shrink-0 bg-comic-black text-white px-4 py-2 border-4 border-comic-black font-action text-2xl uppercase italic">Close</button>
+      </div>
+      <div class="space-y-6 text-comic-black">
+        <div class="bg-comic-yellow border-4 border-comic-black p-4 sm:p-5">
+          <p class="font-bold text-base sm:text-lg leading-relaxed">
+            You do not need to "learn AI." You need to learn how to ask better.
+          </p>
+          <p class="mt-3 text-base leading-relaxed">
+            Most weak AI output is not an AI problem. It is a prompt problem. Clear prompts remove guesswork and produce answers that are useful, sharp, and practical.
+          </p>
+        </div>
+
+        <section class="border-4 border-comic-black p-4 sm:p-5">
+          <h3 class="font-action text-2xl uppercase italic mb-3">The Only Framework You Need</h3>
+          <p class="font-bold text-base mb-3">Role + Goal + Context + Level + Output + Constraints + Quality Bar</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Role</h4>
+              <p class="text-sm leading-relaxed">Tell the AI who to act as: teacher, coach, strategist, problem-solver.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Goal</h4>
+              <p class="text-sm leading-relaxed">Ask for a real result, not a broad topic.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Context</h4>
+              <p class="text-sm leading-relaxed">Share background, what you tried, what keeps going wrong.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Level</h4>
+              <p class="text-sm leading-relaxed">State beginner, intermediate, or advanced.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Output</h4>
+              <p class="text-sm leading-relaxed">Choose steps, plan, examples, checklist, or summary.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3">
+              <h4 class="font-action text-xl uppercase italic mb-1">Constraints</h4>
+              <p class="text-sm leading-relaxed">Specify what to avoid: jargon, fluff, generic advice, overexplaining.</p>
+            </div>
+            <div class="bg-white border-2 border-comic-black p-3 sm:col-span-2">
+              <h4 class="font-action text-xl uppercase italic mb-1">Quality Bar</h4>
+              <p class="text-sm leading-relaxed">Ask for highest leverage advice, challenge weak assumptions, and practical truth.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-comic-black text-white border-4 border-comic-black p-5">
+          <h3 class="font-action text-2xl uppercase italic text-comic-yellow mb-3">Best All-Purpose Template</h3>
+          <pre class="whitespace-pre-wrap font-mono text-sm leading-relaxed">Act as a high-level [teacher / coach / problem-solver / strategist]. Help me with [goal]. My situation is [context]. My level is [beginner / intermediate / advanced]. I want [output]. Make it [simple / practical / direct / step-by-step]. Avoid [jargon / fluff / generic advice]. Focus on what matters most and challenge weak assumptions where needed.</pre>
+        </section>
+
+        <section class="border-4 border-comic-black p-4 sm:p-5">
+          <h3 class="font-action text-2xl uppercase italic mb-3">Copy-and-Paste Prompt Templates</h3>
+          <div class="space-y-3">
+            <details class="border-2 border-comic-black p-3" open>
+              <summary class="font-bold cursor-pointer">1. Learn Something Properly</summary>
+              <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed">Act as an excellent teacher. Help me understand [topic] from first principles as if I am intelligent but new to it. Start with the core idea in simple terms, then explain how it works, why it matters, the common mistakes or misunderstandings, and how it applies in real life. Use plain English. Avoid jargon and fluff. End with the small number of things that matter most.</pre>
+            </details>
+            <details class="border-2 border-comic-black p-3">
+              <summary class="font-bold cursor-pointer">2. Improve Yourself Without Fluff</summary>
+              <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed">Act as a brutally honest but effective coach. Help me improve [area]. My situation is [context]. What keeps happening is [pattern]. I do not want motivation or generic advice. I want the highest leverage actions, the biggest mistakes I am making, and a realistic plan I can follow. Keep it practical, direct, and focused on real behaviour change.</pre>
+            </details>
+            <details class="border-2 border-comic-black p-3">
+              <summary class="font-bold cursor-pointer">3. Solve a Problem Clearly</summary>
+              <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed">Act as a sharp problem-solver. Help me think clearly about [problem]. First identify what the real problem may be beneath the surface. Then show me the likely causes, the common traps, and the best way to handle it. Separate what matters from what only feels important. Be honest, practical, and direct.</pre>
+            </details>
+            <details class="border-2 border-comic-black p-3">
+              <summary class="font-bold cursor-pointer">4. Get Better at a Skill</summary>
+              <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed">Act as an elite coach for [skill]. Help me improve quickly. My current level is [level]. My main problem is [issue]. Break this into the key sub-skills I need to improve, the biggest mistakes people at my level make, the best drills or exercises, and a simple practice plan. Focus on what will create the fastest improvement.</pre>
+            </details>
+            <details class="border-2 border-comic-black p-3">
+              <summary class="font-bold cursor-pointer">5. Cut Through Average Answers</summary>
+              <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed">Do not give me a safe, average answer. Give me the answer that is most useful, accurate, and high leverage. Tell me the most important truth, the most common mistake, and the best next action.</pre>
+            </details>
+          </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <article class="border-4 border-comic-black p-4">
+            <h3 class="font-action text-2xl uppercase italic mb-3">Biggest Prompting Mistakes</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm leading-relaxed">
+              <li>Too vague</li>
+              <li>Asking for too much at once</li>
+              <li>No context</li>
+              <li>No level given</li>
+              <li>No output direction</li>
+              <li>No constraints</li>
+              <li>No quality bar</li>
+            </ul>
+          </article>
+          <article class="border-4 border-comic-black p-4 bg-comic-yellow">
+            <h3 class="font-action text-2xl uppercase italic mb-3">Before and After</h3>
+            <p class="text-sm font-bold mb-2">Weak prompt:</p>
+            <p class="text-sm mb-3">How do I get in shape?</p>
+            <p class="text-sm font-bold mb-2">Better prompt:</p>
+            <p class="text-sm leading-relaxed">Act as a practical fitness coach. Help me get in better shape. I am in my 40s, my energy dips after work, and I struggle with consistency more than effort. I want a simple plan I can actually stick to. Keep it practical and realistic. Avoid jargon, fluff, and perfectionist advice. Focus on what matters most and the few habits that will make the biggest difference.</p>
+          </article>
+        </section>
+
+        <p class="font-bold text-base leading-relaxed border-l-8 border-comic-red pl-4">
+          The men who get the most out of AI are not the ones who know the most technical terms. They are the ones who ask better.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="newsletterStatusModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6" aria-hidden="true">
+    <div class="absolute inset-0 bg-comic-black/80" data-newsletter-close></div>
+    <div id="newsletterStatusPanel" role="dialog" aria-modal="true" aria-labelledby="newsletterStatusTitle" class="guide-modal-panel relative w-full max-w-2xl bg-white border-8 border-comic-black comic-shadow-yellow p-6 sm:p-8">
+      <p id="newsletterStatusBadge" class="inline-block bg-comic-black text-white px-4 py-2 border-4 border-comic-black font-action text-2xl uppercase italic mb-4">Newsletter</p>
+      <h2 id="newsletterStatusTitle" class="text-4xl sm:text-5xl font-action uppercase italic leading-none mb-4">Status</h2>
+      <p id="newsletterStatusMessage" class="font-bold text-lg uppercase italic leading-tight border-l-8 border-comic-red pl-4 mb-6">
+        Thanks for subscribing.
+      </p>
+      <div class="flex justify-end">
+        <button id="closeNewsletterStatusBtn" type="button" class="bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white text-comic-black py-10 border-t-[12px] border-comic-yellow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-action text-xl uppercase italic tracking-widest">&copy; 2026 justbetterAI.tech</p>
+      <a href="../index.html" class="bg-comic-red text-white px-6 py-2 border-4 border-comic-black comic-shadow-black font-action text-2xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">Back Home</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const modalEntries = [];
+
+      const updateBodyLock = function () {
+        const hasOpenModal = modalEntries.some(function (entry) {
+          return entry.modal.getAttribute("aria-hidden") === "false";
+        });
+        if (hasOpenModal) {
+          document.body.classList.add("overflow-hidden");
+        } else {
+          document.body.classList.remove("overflow-hidden");
+        }
+      };
+
+      const bindModal = function (config) {
+        const modal = document.getElementById(config.modalId);
+        const closeBtn = document.getElementById(config.closeId);
+        const openBtns = (config.openIds || [])
+          .map(function (id) { return document.getElementById(id); })
+          .filter(function (btn) { return Boolean(btn); });
+
+        if (!modal || !closeBtn) {
+          return null;
+        }
+
+        const openModal = function () {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modal.setAttribute("aria-hidden", "false");
+          updateBodyLock();
+          closeBtn.focus();
+        };
+
+        const closeModal = function () {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          modal.setAttribute("aria-hidden", "true");
+          updateBodyLock();
+        };
+
+        openBtns.forEach(function (btn) {
+          btn.addEventListener("click", openModal);
+        });
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function (event) {
+          if (event.target instanceof HTMLElement && event.target.hasAttribute(config.overlayAttribute)) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+            closeModal();
+          }
+        });
+
+        modalEntries.push({ modal: modal });
+        return { open: openModal, close: closeModal, modal: modal };
+      };
+
+      bindModal({
+        modalId: "promptGuideModal",
+        openIds: ["openPromptGuideBtn", "openPromptGuideBtnSecondary"],
+        closeId: "closePromptGuideBtn",
+        overlayAttribute: "data-guide-close"
+      });
+
+      bindModal({
+        modalId: "useCasesModal",
+        openIds: ["openUseCasesBtn"],
+        closeId: "closeUseCasesBtn",
+        overlayAttribute: "data-use-cases-close"
+      });
+
+      const newsletterModal = bindModal({
+        modalId: "newsletterStatusModal",
+        openIds: [],
+        closeId: "closeNewsletterStatusBtn",
+        overlayAttribute: "data-newsletter-close"
+      });
+
+      const newsletterStatusMap = {
+        ok: {
+          title: "You Are Subscribed",
+          message: "You are now on The Upgraded Man newsletter. Check your inbox for updates.",
+          panelShadow: "comic-shadow-yellow",
+          badgeClass: "bg-comic-black text-white"
+        },
+        invalid_email: {
+          title: "Email Not Valid",
+          message: "Please enter a valid email address and submit again.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        invalid_method: {
+          title: "Submit Error",
+          message: "That request was not accepted. Please submit through the form.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        config_error: {
+          title: "Signup Temporarily Unavailable",
+          message: "Newsletter signup is not configured correctly right now. Please try again soon.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        request_error: {
+          title: "Network Error",
+          message: "We could not reach the newsletter service. Please try again in a moment.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        api_error: {
+          title: "Signup Failed",
+          message: "The newsletter service returned an error. Please try again shortly.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        },
+        payload_error: {
+          title: "Signup Failed",
+          message: "We could not prepare your signup data. Please submit again.",
+          panelShadow: "comic-shadow-red",
+          badgeClass: "bg-comic-red text-white"
+        }
+      };
+
+      const newsletterTitle = document.getElementById("newsletterStatusTitle");
+      const newsletterMessage = document.getElementById("newsletterStatusMessage");
+      const newsletterPanel = document.getElementById("newsletterStatusPanel");
+      const newsletterBadge = document.getElementById("newsletterStatusBadge");
+      const currentUrl = new URL(window.location.href);
+      const newsletterStatus = currentUrl.searchParams.get("newsletter");
+      const newsletterConfig = newsletterStatusMap[newsletterStatus || ""];
+
+      if (newsletterConfig && newsletterModal && newsletterTitle && newsletterMessage && newsletterPanel && newsletterBadge) {
+        newsletterTitle.textContent = newsletterConfig.title;
+        newsletterMessage.textContent = newsletterConfig.message;
+
+        newsletterPanel.classList.remove("comic-shadow-yellow", "comic-shadow-red");
+        newsletterPanel.classList.add(newsletterConfig.panelShadow);
+
+        newsletterBadge.classList.remove("bg-comic-black", "bg-comic-red", "text-white");
+        newsletterBadge.classList.add.apply(newsletterBadge.classList, newsletterConfig.badgeClass.split(" "));
+
+        newsletterModal.open();
+
+        currentUrl.searchParams.delete("newsletter");
+        const nextSearch = currentUrl.searchParams.toString();
+        const nextUrl = currentUrl.pathname + (nextSearch ? "?" + nextSearch : "") + currentUrl.hash;
+        window.history.replaceState({}, "", nextUrl);
+      }
+
+    })();
+  </script>
+</body>
+</html>
+
+

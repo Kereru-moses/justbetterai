@@ -26,7 +26,7 @@ function get_newsletter_config(string $key, array $localConfig): string
 
 function redirect_with_status(string $status): void
 {
-    header('Location: ./get-started.html?newsletter=' . rawurlencode($status) . '#newsletter-signup', true, 303);
+    header('Location: ./get-started/index.html?newsletter=' . rawurlencode($status) . '#newsletter-signup', true, 303);
     exit;
 }
 
@@ -110,3 +110,4 @@ if ($httpCode < 200 || $httpCode >= 300) {
 }
 
 redirect_with_status('ok');
+

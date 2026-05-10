@@ -1,12 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.{html,php}"],
+  content: [
+    "./*.{html,php}",
+    "./get-started/**/*.html",
+    "./ai-productivity/**/*.html",
+    "./energy-discipline/**/*.html",
+    "./life-quality/**/*.html",
+    "./feel-alive-reset/**/*.html",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Space Grotesk", "sans-serif"],
-        display: ["Bungee", "cursive"],
-        action: ["Bangers", "cursive"],
+        sans: ["Lato", "sans-serif"],
+        display: ["Poppins", "sans-serif"],
+        action: ["Poppins", "sans-serif"],
       },
       colors: {
         comic: {

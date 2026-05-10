@@ -6,6 +6,8 @@
   <title>justbetterAI.tech | Life, Just Better with AI</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./styles/tailwind.css" />
+  <link rel="preload" href="./styles/fonts/lato-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./styles/fonts/poppins-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="./styles/fonts.css" />
   <style>
     .halftone-pattern {
@@ -114,12 +116,12 @@
         <div class="w-14 h-14 bg-comic-red border-4 border-comic-black comic-shadow-black flex items-center justify-center text-white font-display text-3xl -rotate-6">J</div>
         <span class="text-2xl font-action tracking-tighter text-comic-black uppercase scale-y-110">justbetterAI<span class="text-comic-red">.tech</span></span>
       </a>
-      <div class="hidden md:flex items-center gap-8 font-display uppercase tracking-tighter text-sm">
-        <a class="hover:text-comic-red transition-colors" href="./get-started.html">Get Started</a>
+      <div class="hidden md:flex items-center gap-6 font-display uppercase tracking-tighter text-sm">
+        <a class="hover:text-comic-red transition-colors" href="./get-started/index.html">Get Started</a>
         <a data-build-status-trigger class="hover:text-comic-red transition-colors" href="#lifestyle">Skill Tree</a>
         <a data-build-status-trigger class="hover:text-comic-red transition-colors" href="#built-by-ai">Origin</a>
         <a data-build-status-trigger class="hover:text-comic-red transition-colors" href="#journey">Quest Logs</a>
-        <a class="bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all" href="./get-started.html">Get Started</a>
+        <a class="bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all" href="./get-started/index.html">Start Here</a>
       </div>
       <button id="mobileMenuToggle" type="button" aria-label="Open mobile menu" aria-controls="mobileNavPanel" aria-expanded="false" class="md:hidden p-2 text-comic-black">
         <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +131,7 @@
     </nav>
     <div id="mobileNavPanel" class="md:hidden hidden border-t-8 border-comic-black bg-comic-yellow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <a href="./get-started.html" class="inline-block bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic">
+        <a href="./get-started/index.html" class="inline-block bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic">
           Start Here
         </a>
       </div>
@@ -159,7 +161,7 @@
             <a class="bg-comic-red text-white px-8 py-3 border-4 border-comic-black comic-shadow-black font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="#lifestyle">
               Skill Tree
             </a>
-            <a class="bg-comic-black text-white px-8 py-3 border-4 border-comic-black comic-shadow-red font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="./get-started.html">
+            <a class="bg-comic-black text-white px-8 py-3 border-4 border-comic-black comic-shadow-red font-action text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-center uppercase" href="./get-started/index.html">
               Start Here
             </a>
           </div>
@@ -200,7 +202,7 @@
           </p>
         </div>
 
-        <a href="./get-started.html" class="group bg-white border-8 border-comic-black comic-shadow-black p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 hover:-translate-y-1 hover:-translate-x-1 transition-all duration-300 block">
+        <a href="./get-started/index.html" class="group bg-white border-8 border-comic-black comic-shadow-black p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 hover:-translate-y-1 hover:-translate-x-1 transition-all duration-300 block">
           <div class="w-full md:w-1/3 max-w-sm">
             <div class="w-full aspect-square bg-comic-yellow border-4 border-comic-black overflow-hidden rotate-2 group-hover:rotate-0 transition-transform manga-panel-effect">
               <img class="w-full h-full object-cover" src="./newtoai-opt.webp" alt="New to AI get started artwork" />
@@ -232,7 +234,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <a href="./ai-productivity.html" data-build-status-trigger class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-black hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+          <a href="./ai-productivity/index.html" data-build-status-trigger class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-black hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
             <div class="absolute top-0 right-0 p-4 font-action text-comic-red text-6xl opacity-10 group-hover:opacity-20 transition-opacity">01</div>
             <div class="w-[15rem] h-[15rem] bg-comic-yellow border-4 border-comic-black flex items-center justify-center mb-8 rotate-3 group-hover:rotate-0 transition-transform overflow-hidden manga-panel-effect">
               <img class="w-full h-full object-cover" src="./meproductive-opt.webp" alt="Productivity avatar" />
@@ -242,7 +244,7 @@
             <span class="inline-block mt-6 bg-comic-black text-white px-6 py-2 border-4 border-comic-black comic-shadow-red font-action text-2xl uppercase italic">Open Page</span>
           </a>
 
-          <a href="./energy-discipline.html" data-build-status-trigger class="group relative p-10 bg-comic-black text-white border-4 border-comic-black comic-shadow-yellow hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+          <a href="./energy-discipline/index.html" data-build-status-trigger class="group relative p-10 bg-comic-black text-white border-4 border-comic-black comic-shadow-yellow hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
             <div class="absolute top-0 right-0 p-4 font-action text-comic-yellow text-6xl opacity-20">02</div>
             <div class="w-[15rem] h-[15rem] bg-comic-red border-4 border-white flex items-center justify-center mb-8 -rotate-6 group-hover:rotate-0 transition-transform overflow-hidden manga-panel-effect">
               <img class="w-full h-full object-cover" src="./energy-discipline-opt.webp" alt="Energy avatar" />
@@ -252,7 +254,7 @@
             <span class="inline-block mt-6 bg-comic-yellow text-comic-black px-6 py-2 border-4 border-comic-black comic-shadow-black font-action text-2xl uppercase italic">Open Page</span>
           </a>
 
-          <a href="./life-quality.html" data-build-status-trigger class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-red hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
+          <a href="./life-quality/index.html" data-build-status-trigger class="group relative p-10 bg-white border-4 border-comic-black comic-shadow-red hover:-translate-y-2 hover:-translate-x-1 transition-all duration-300 block">
             <div class="absolute top-0 right-0 p-4 font-action text-comic-black text-6xl opacity-10">03</div>
             <div class="w-[15rem] h-[15rem] bg-white border-4 border-comic-black flex items-center justify-center mb-8 rotate-12 group-hover:rotate-0 transition-transform halftone-yellow overflow-hidden manga-panel-effect">
               <img class="w-full h-full object-cover" src="./life-quality-opt.webp" alt="Life quality avatar" />
@@ -420,7 +422,7 @@
           </p>
         </div>
         <div class="flex items-start lg:items-center">
-          <a href="./get-started.html#newsletter-signup" class="inline-block bg-comic-red text-white px-8 py-3 border-4 border-comic-black comic-shadow-yellow font-action text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          <a href="./get-started/index.html#newsletter-signup" class="inline-block bg-comic-red text-white px-8 py-3 border-4 border-comic-black comic-shadow-yellow font-action text-3xl uppercase italic hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
             Join The Upgraded Man
           </a>
         </div>
@@ -527,4 +529,6 @@
   </script>
 </body>
 </html>
+
+
 

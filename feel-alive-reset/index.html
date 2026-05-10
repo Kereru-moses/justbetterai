@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feel Alive Again Reset | justbetterAI.tech</title>
+  <meta name="description" content="A $10 72-hour AI reset for dads who want to ditch the afternoon crash and stop running on fumes by dinner." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../styles/tailwind.css" />
+  <link rel="stylesheet" href="../styles/fonts.css" />
+  <style>
+    :root {
+      --brand-black: #000000;
+      --brand-white: #ffffff;
+      --brand-red: #d30000;
+      --brand-yellow: #ffff00;
+      --container-wide: 1264px;
+      --container-main: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Lato, sans-serif;
+      background: var(--brand-white);
+      color: var(--brand-black);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .display {
+      font-family: Poppins, sans-serif;
+    }
+
+    .container-main {
+      max-width: var(--container-main);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .container-wide {
+      max-width: var(--container-wide);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .top-announcement {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--brand-red);
+      padding: 16px;
+    }
+
+    .announcement-pill {
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-white);
+      color: var(--brand-black);
+      padding: 11px 14px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      font-family: Poppins, sans-serif;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.96px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .announcement-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--brand-red);
+      flex: 0 0 auto;
+    }
+
+    .hero-section {
+      background: var(--brand-black);
+      padding: 70px 0 40px;
+    }
+
+    .hero-eyebrow {
+      color: var(--brand-white);
+      text-align: center;
+      text-transform: uppercase;
+      font-family: Poppins, sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      margin: 0;
+    }
+
+    .hero-heading {
+      margin: 18px auto 0;
+      max-width: 980px;
+      color: var(--brand-white);
+      text-align: center;
+      font-size: 64px;
+      line-height: 72px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero-subheading {
+      margin: 22px auto 0;
+      max-width: 980px;
+      color: var(--brand-white);
+      text-align: center;
+      font-size: 40px;
+      line-height: 54px;
+      font-weight: 400;
+    }
+
+    .hero-video-wrap {
+      max-width: 460px;
+      width: 100%;
+      margin: 40px auto 0;
+    }
+
+    .media-placeholder {
+      border: 2px solid rgba(255, 255, 255, 0.24);
+      border-radius: 10px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+      background-size: 32px 32px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .media-placeholder .label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: var(--brand-white);
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-video {
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-video-frame {
+      border: 2px solid rgba(255, 255, 255, 0.24);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.36);
+    }
+
+    .hero-video-element {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #000;
+    }
+
+    .hero-support {
+      margin: 36px auto 0;
+      max-width: 950px;
+      text-align: center;
+      color: var(--brand-white);
+      font-family: Poppins, sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.64px;
+      font-weight: 400;
+    }
+
+    .btn-wrap {
+      text-align: center;
+    }
+
+    .primary-btn {
+      display: inline-block;
+      background: var(--brand-red);
+      color: var(--brand-white);
+      border: 2px solid var(--brand-black);
+      font-family: Poppins, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      width: min(440px, 100%);
+      padding: 22px 12px;
+      text-transform: uppercase;
+      box-shadow: 6px 6px 0 var(--brand-black);
+    }
+
+    .btn-yellow {
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+      border: 2px solid var(--brand-black);
+      box-shadow: 6px 6px 0 var(--brand-black);
+    }
+
+    .hero-section .primary-btn {
+      border-color: var(--brand-white);
+      box-shadow: 6px 6px 0 var(--brand-white);
+    }
+
+    .social-proof {
+      background: var(--brand-white);
+      padding: 56px 0 0;
+    }
+
+    .social-proof-title {
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: 0.64px;
+      margin: 0 0 24px;
+    }
+
+    .trust-top {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .trust-photo {
+      position: static;
+    }
+
+    .trust-photo-box {
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      border: 2px solid var(--brand-black);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-photo-cred {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.72);
+      color: var(--brand-white);
+      font-family: Poppins, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .trust-photo-box .label {
+      color: rgba(0, 0, 0, 0.72);
+      font-family: Poppins, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    .trust-intro,
+    .trust-story {
+      text-align: left;
+      display: grid;
+      gap: 16px;
+    }
+
+    .trust-intro p,
+    .trust-story p {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: rgba(0, 0, 0, 0.86);
+    }
+
+    .trust-story {
+      max-width: 1040px;
+      margin: 20px auto 0;
+    }
+
+    .trust-cta {
+      margin-top: 28px;
+    }
+
+    .trust-points {
+      margin: 0;
+      padding-left: 24px;
+      list-style: disc;
+      display: grid;
+      gap: 8px;
+    }
+
+    .trust-points li {
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: rgba(0, 0, 0, 0.86);
+    }
+
+
+    .benefits-section {
+      background: var(--brand-white);
+      padding-top: 40px;
+    }
+
+    .band-heading {
+      position: relative;
+      overflow: hidden;
+      background: var(--brand-black);
+      padding: 72px 30px;
+      margin-bottom: 32px;
+    }
+
+    .band-heading::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12), transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1), transparent 45%);
+      pointer-events: none;
+    }
+
+    .band-heading h2 {
+      margin: 0;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      color: var(--brand-white);
+      font-size: 41px;
+      line-height: 39px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .band-subheading {
+      margin: 16px auto 0;
+      max-width: 860px;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      padding: 0 0 16px;
+      align-items: start;
+    }
+
+    .benefit-card {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      height: 100%;
+    }
+
+    .benefit-title {
+      display: block;
+      padding: 24px 26px;
+      border-radius: 8px;
+      text-align: center;
+      background: var(--brand-yellow);
+      border: 2px solid var(--brand-black);
+      box-shadow: none;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 700;
+      min-height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .benefit-media {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      border: 2px solid var(--brand-black);
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .benefit-media-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(0, 0, 0, 0.68);
+      font-family: Poppins, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .benefit-copy {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.64px;
+      text-align: center;
+      color: var(--brand-black);
+      font-weight: 400;
+      width: 100%;
+    }
+
+    .bonus-section {
+      background: var(--brand-white);
+      padding: 36px 0 52px;
+    }
+
+    .bonus-heading {
+      margin: 0;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 1.2;
+      color: var(--brand-black);
+    }
+
+    .bonus-layout {
+      margin-top: 22px;
+    }
+
+    .bonus-shell {
+      border: 4px solid var(--brand-black);
+      border-radius: 12px;
+      background: var(--brand-white);
+      position: relative;
+      overflow: visible;
+    }
+
+    .bonus-pill {
+      position: absolute;
+      top: -16px;
+      left: 28px;
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+      border: 2px solid var(--brand-black);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-family: Poppins, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .bonus-list {
+      padding: 30px 22px 0;
+    }
+
+    .bonus-row {
+      display: grid;
+      grid-template-columns: 74px 170px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    }
+
+    .bonus-row:last-child {
+      border-bottom: none;
+    }
+
+    .bonus-num {
+      font-family: Poppins, sans-serif;
+      font-size: 58px;
+      line-height: 0.9;
+      font-weight: 700;
+      color: var(--brand-red);
+      letter-spacing: 0.01em;
+    }
+
+    .bonus-main {
+      display: grid;
+      gap: 6px;
+    }
+
+    .bonus-row-media {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02));
+      aspect-ratio: 4 / 3;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bonus-row-media .label {
+      color: rgba(0, 0, 0, 0.68);
+      font-family: Poppins, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    .bonus-title {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--brand-black);
+    }
+
+    .bonus-objection {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--brand-red);
+    }
+
+    .bonus-copy {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.82);
+    }
+
+    .bonus-highlight-bar {
+      background: var(--brand-yellow);
+      min-height: 34px;
+      width: 100%;
+      border-top: 2px solid rgba(0, 0, 0, 0.16);
+    }
+
+    .bonus-cta {
+      margin-top: 24px;
+    }
+
+    .guarantee-section {
+      background: var(--brand-white);
+      padding: 8px 0 34px;
+    }
+
+    .guarantee-box {
+      max-width: 980px;
+      margin: 0 auto;
+      border: 4px solid var(--brand-black);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.14);
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .guarantee-tag {
+      margin: 0 0 12px;
+      font-family: Poppins, sans-serif;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--brand-black);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .guarantee-copy {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      color: var(--brand-black);
+      font-size: 30px;
+      line-height: 1.28;
+      font-weight: 700;
+    }
+
+    .guarantee-copy + .guarantee-copy {
+      margin-top: 16px;
+    }
+
+    .guarantee-copy--plain {
+      font-weight: 400;
+    }
+
+    .gallery-section {
+      background: var(--brand-white);
+      padding-bottom: 60px;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .gallery-media {
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+      position: relative;
+    }
+
+    .gallery-media:first-child {
+      aspect-ratio: 16 / 5;
+    }
+
+    .gallery-media:last-child {
+      aspect-ratio: 16 / 5;
+    }
+
+    .longform-section {
+      background: var(--brand-white);
+      padding: 40px 0;
+    }
+
+    .accordion-shell {
+      background: var(--brand-white);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .accordion-item:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .accordion-header {
+      background: var(--brand-black);
+      color: var(--brand-white);
+      border-radius: 8px;
+      padding: 24px 48px 24px 16px;
+      font-family: Poppins, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: rgba(0, 0, 0, 0.92);
+    }
+
+    .accordion-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-icon::before {
+      content: "+";
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .accordion-content {
+      background: var(--brand-white);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-content {
+      opacity: 1;
+    }
+
+    .accordion-content-inner {
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .accordion-content p {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: rgba(0, 0, 0, 0.86);
+      font-weight: 400;
+    }
+
+    .accordion-content p strong {
+      font-weight: 700;
+      color: var(--brand-black);
+    }
+
+    .post-faq-cta-section {
+      background: var(--brand-black);
+      padding: 56px 0 64px;
+    }
+
+    .post-faq-cta-card {
+      max-width: 980px;
+      margin: 0 auto;
+      border: 4px solid var(--brand-black);
+      border-radius: 12px;
+      background: var(--brand-white);
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.24);
+      padding: 34px 24px 76px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-faq-cta-card::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 34px;
+      background: var(--brand-yellow);
+      border-top: 2px solid rgba(0, 0, 0, 0.16);
+    }
+
+    .post-faq-cta-copy p {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 400;
+      color: var(--brand-black);
+      letter-spacing: 0.5px;
+    }
+
+    .post-faq-cta-copy p + p {
+      margin-top: 20px;
+    }
+
+    .post-faq-cta-btn {
+      margin-top: 34px;
+    }
+
+    .post-faq-cta-note {
+      margin-top: 16px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .post-faq-cta-note p {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.85);
+      letter-spacing: 0.24px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-heading {
+        font-size: 52px;
+        line-height: 60px;
+      }
+
+      .hero-subheading {
+        font-size: 32px;
+        line-height: 42px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-title {
+        min-height: 0;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-top: 30px;
+      }
+
+      .hero-heading {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .hero-subheading {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+
+      .hero-video-wrap {
+        max-width: 340px;
+      }
+
+      .hero-support {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+      }
+
+      .social-proof {
+        padding-top: 36px;
+      }
+
+      .social-proof-title {
+        font-size: 28px;
+        line-height: 34px;
+      }
+
+      .bonus-heading {
+        font-size: 29px;
+      }
+
+      .bonus-title {
+        font-size: 24px;
+      }
+
+      .bonus-objection {
+        font-size: 18px;
+      }
+
+      .bonus-row {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .bonus-row-media {
+        display: none;
+      }
+
+      .bonus-num {
+        font-size: 40px;
+      }
+
+      .bonus-copy {
+        font-size: 16px;
+      }
+
+      .bonus-pill {
+        left: 16px;
+      }
+
+      .guarantee-copy {
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      .guarantee-tag {
+        font-size: 22px;
+      }
+
+      .trust-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .trust-photo {
+        position: static;
+      }
+
+      .trust-photo-box {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .trust-photo-cred {
+        font-size: 11px;
+        line-height: 1.35;
+        padding: 8px 10px;
+      }
+
+      .trust-intro p,
+      .trust-story p,
+      .trust-points li {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+      }
+
+      .band-heading {
+        padding: 52px 18px;
+      }
+
+      .band-heading h2 {
+        font-size: 29px;
+        line-height: 34px;
+      }
+
+      .band-subheading {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 12px;
+      }
+
+      .accordion-shell {
+        padding: 0;
+      }
+
+      .accordion-header {
+        font-size: 22px;
+        padding: 24px 24px 24px 10px;
+      }
+
+      .accordion-icon {
+        right: 8px;
+      }
+
+      .accordion-content p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+      }
+
+      .post-faq-cta-card {
+        padding: 28px 16px 68px;
+      }
+
+      .post-faq-cta-copy p {
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.2px;
+      }
+
+      .post-faq-cta-note p {
+        font-size: 15px;
+        line-height: 22px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .announcement-pill {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-video-wrap {
+        max-width: 320px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-video-wrap {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-video-wrap {
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-announcement">
+    <p class="announcement-pill"><span class="announcement-dot"></span><strong>LIVE:</strong> Feel Alive Reset is $10 right now.</p>
+  </div>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container-main">
+        <p class="hero-eyebrow">Feel better within 72 hours | For Dads Running On Fumes</p>
+        <h1 class="hero-heading">FOR TIRED, DRAINED DADS OPERATING BELOW THEIR POTENTIAL</h1>
+        <h2 class="hero-subheading">Feel more like yourself in 72 hours.</h2>
+
+        <div class="hero-video-wrap">
+          <div class="hero-video-frame hero-video">
+            <video
+              class="hero-video-element"
+              controls
+              playsinline
+              preload="metadata"
+              poster="./FAR-poster.jpg"
+              aria-label="Feel Alive Reset intro video"
+            >
+              <source src="./FAR-web-720p.mp4" type="video/mp4" media="(min-width: 768px)" />
+              <source src="./FAR-web-lite-540p.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <p class="hero-support">Feel alive, trust yourself again, and take back control. No complicated plan. Takes minutes, not hours.</p>
+
+        <div class="btn-wrap" style="margin-top: 40px;">
+          <a href="https://www.paypal.com/ncp/payment/6AATMZSGH49Y8" class="primary-btn" target="_blank" rel="noopener noreferrer">Get the Feel Alive Reset - $10</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="social-proof" class="social-proof">
+      <div class="container-main">
+        <h2 class="social-proof-title">Why I know this reset can work for you</h2>
+        <div class="trust-top">
+          <aside class="trust-photo">
+            <div class="trust-photo-box">
+              <div class="trust-photo-cred">Kereru Moses | Dad in late 40s | Personal Trainer | Nutrition Coach | Health Coach</div>
+              <img class="w-full h-full object-cover" src="./Untitled design.webp" alt="Coach with child on shoulders smiling" loading="lazy" decoding="async" />
+            </div>
+          </aside>
+
+          <div class="trust-intro">
+            <p>For the last 2 decades, I've coached dads over 40 through training, nutrition, and health.</p>
+            <p>Different jobs. Different bodies. Different lives.</p>
+            <p><strong>But the same pattern kept showing up.</strong></p>
+            <p>They'd hit the afternoon foggy, flat, and running on caffeine. By the time they got home, they didn't have much left for anyone. They just wanted to collapse on the couch.</p>
+            <p>Then the guilt kicked in because their family got the tired, impatient, half-assed version of them again.</p>
+            <p>After working with enough dads, I started seeing what was really going on.</p>
+          </div>
+        </div>
+
+        <div class="trust-story">
+          <ul class="trust-points">
+            <li>Not massive problems.</li>
+            <li>Not a broken metabolism.</li>
+            <li>Not a complicated new plan.</li>
+          </ul>
+
+          <p>Just a few key parts of the day were quietly draining them.</p>
+          <p><strong>When we fixed those, the shift was obvious.</strong></p>
+
+          <ul class="trust-points">
+            <li>They came home with more left and kicked the ball around instead of watching from the couch.</li>
+            <li>They had better conversations because their brain wasn't fried.</li>
+            <li>They felt calmer, sharper, and more like themselves again.</li>
+            <li>They got their confidence back because they started doing what they said they would do.</li>
+          </ul>
+
+          <p>That's where this came from. Two decades of watching the same shift happen - and building it into something you can start today.</p>
+          <div class="btn-wrap trust-cta">
+            <a href="https://www.paypal.com/ncp/payment/6AATMZSGH49Y8" class="primary-btn" target="_blank" rel="noopener noreferrer">Get the Feel Alive Reset - $10</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-you-get" class="benefits-section">
+      <div class="band-heading">
+        <div class="container-wide">
+          <h2>What you will get in the Feel Alive Reset:</h2>
+          <p class="band-subheading">As a dad in my late 40s, I've lived this pattern myself and coached hundreds through it.</p>
+        </div>
+      </div>
+
+      <div class="container-wide">
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-title">#1: Your Personal AI Energy Coach</span>
+            <div class="benefit-media">
+              <img src="./personal-ai-energy-coach-square-opt.webp" alt="Dad and child riding bikes together on a path" loading="lazy" decoding="async" />
+            </div>
+            <p class="benefit-copy">Your own AI coach that tells you exactly what to shift - so you come home with something left. No app. No daily login. No streaks.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-title">#2: The Real Day Guide</span>
+            <div class="benefit-media">
+              <img src="./real-day-guide-opt.webp" alt="Real day guide case study booklet on a wooden table beside coffee" loading="lazy" decoding="async" />
+            </div>
+            <p class="benefit-copy">See exactly how a real dad runs this in a real week so it fits your life and doesn't become another thing you started and quit.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-title">#3: The Daily Checklist</span>
+            <div class="benefit-media">
+              <img src="./daily-checklist-opt.webp" alt="Man writing a simple checklist at a wooden table beside a cup of coffee" loading="lazy" decoding="async" />
+            </div>
+            <p class="benefit-copy">A simple daily reference that makes follow-through automatic so you stop starting over and start trusting yourself again.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bonus-section">
+      <div class="container-wide">
+        <h2 class="bonus-heading">You also get 3 free bonuses to make this even easier</h2>
+
+        <div class="bonus-layout">
+          <div class="bonus-shell">
+            <span class="bonus-pill">FREE BONUSES</span>
+
+            <div class="bonus-list">
+              <article class="bonus-row">
+                <div class="bonus-num">01</div>
+                <div class="bonus-row-media">
+                  <img class="w-full h-full object-cover" src="./beach.webp" alt="Sunrise view from bedroom window over the beach" loading="lazy" decoding="async" />
+                </div>
+                <div class="bonus-main">
+                  <h3 class="bonus-title">The Strong Start</h3>
+                  <p class="bonus-objection">Every dad wakes up.</p>
+                  <p class="bonus-copy">Set up your morning so the afternoon crash never gets the upper hand.</p>
+                </div>
+              </article>
+
+              <article class="bonus-row">
+                <div class="bonus-num">02</div>
+                <div class="bonus-row-media">
+                  <img class="w-full h-full object-cover" src="./home.webp" alt="Child smiling at the doorway as parent arrives home" loading="lazy" decoding="async" />
+                </div>
+                <div class="bonus-main">
+                  <h3 class="bonus-title">The Doorstep Switch</h3>
+                  <p class="bonus-objection">Every dad comes home.</p>
+                  <p class="bonus-copy">A short audio to switch from work mode to dad mode before you walk through the door.</p>
+                </div>
+              </article>
+
+              <article class="bonus-row">
+                <div class="bonus-num">03</div>
+                <div class="bonus-row-media">
+                  <img class="w-full h-full object-cover" src="./weeekly reset.webp" alt="Dad at the kitchen table doing a weekly AI check-in on his phone" loading="lazy" decoding="async" />
+                </div>
+                <div class="bonus-main">
+                  <h3 class="bonus-title">The Weekly Reset AI Coach</h3>
+                  <p class="bonus-objection">Every dad has weeks that go sideways.</p>
+                  <p class="bonus-copy">Your weekly AI check-in so one rough week doesn't become another month running on fumes.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="bonus-highlight-bar"></div>
+          </div>
+        </div>
+
+        <div class="btn-wrap bonus-cta">
+          <a href="https://www.paypal.com/ncp/payment/6AATMZSGH49Y8" class="primary-btn" target="_blank" rel="noopener noreferrer">Get the Feel Alive Reset - $10</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="guarantee-section">
+      <div class="container-wide">
+        <div class="guarantee-box">
+          <p class="guarantee-tag">🛡️ Guarantee</p>
+          <p class="guarantee-copy">Follow it for 72 hours. If you don’t feel the difference, you get every penny back and keep everything.</p>
+          <p class="guarantee-copy guarantee-copy--plain">You’re not risking $10. You’re risking staying exactly where you are</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="longform-section">
+      <div class="container-main">
+        <div class="accordion-shell">
+          <article class="accordion-item active">
+            <h3 class="accordion-header">What actually happens in the 72-hour reset?<span class="accordion-icon"></span></h3>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <p>You create your own AI coach. It finds where your day is draining you, gives you simple fixes, then the guide, checklist, and bonuses make it easier to follow through so you get home with something left.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion-item active">
+            <h3 class="accordion-header">What do I walk away with?<span class="accordion-icon"></span></h3>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <p>All the tools you need to stop your day draining you, follow through without overthinking, and be more present when it matters.</p>
+                <p>You get:</p>
+                <ul class="trust-points">
+                  <li>Your personal AI Energy Coach</li>
+                  <li>The Real Day Guide</li>
+                  <li>The Daily Checklist</li>
+                  <li>The Doorstep Switch audio</li>
+                  <li>The Strong Start guide</li>
+                  <li>The Weekly Reset prompt</li>
+                  <li>The 72-hour money-back guarantee</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion-item active">
+            <h3 class="accordion-header">Who is this for?<span class="accordion-icon"></span></h3>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <p>For tired, drained dads who know they’re operating below their potential.</p>
+                <p>It’s for you if:</p>
+                <ul class="trust-points">
+                  <li>You feel drained before the day is done</li>
+                  <li>Your family gets what’s left of you</li>
+                  <li>You know what to do but struggle to follow through</li>
+                  <li>You don’t want another complicated plan</li>
+                  <li>You want to be more present when it matters</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion-item active">
+            <h3 class="accordion-header">How much is it?<span class="accordion-icon"></span></h3>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <p>Right now it’s $10. If you follow it for 72 hours and don’t feel the difference, you get every penny back and keep everything.</p>
+                <p>No subscription. No ongoing costs. Just the reset, the tools, and the bonuses.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="post-faq-cta-section" aria-label="72-hour reset call to action">
+      <div class="container-main">
+        <div class="post-faq-cta-card">
+          <div class="post-faq-cta-copy">
+            <p>Start to <strong>feel more like yourself in the next 72 hours</strong>, without tracking your day or overhauling your routine.</p>
+            <p>Your kids aren’t going to be <strong>this age again</strong>. Stop waiting, or that gap grows bigger.</p>
+            <p>Follow it for 72 hours. If you don’t feel the difference, you get <strong>every penny back and keep everything</strong>.</p>
+          </div>
+          <div class="btn-wrap post-faq-cta-btn">
+            <a href="https://www.paypal.com/ncp/payment/6AATMZSGH49Y8" class="primary-btn" target="_blank" rel="noopener noreferrer">Get the Feel Alive Reset - $10</a>
+          </div>
+          <div class="post-faq-cta-note">
+            <p>Right now it’s $10. I may pull it or raise the price later.</p>
+            <p>No tracking. No overhaul. No subscription.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const accordionItems = document.querySelectorAll(".accordion-item");
+
+      accordionItems.forEach(function (item) {
+        const header = item.querySelector(".accordion-header");
+        const content = item.querySelector(".accordion-content");
+        const contentInner = item.querySelector(".accordion-content-inner");
+
+        if (!header || !content || !contentInner) {
+          return;
+        }
+
+        if (item.classList.contains("active")) {
+          content.style.maxHeight = contentInner.scrollHeight + 48 + "px";
+        }
+
+        header.addEventListener("click", function () {
+          const isActive = item.classList.contains("active");
+
+          accordionItems.forEach(function (otherItem) {
+            const otherContent = otherItem.querySelector(".accordion-content");
+            if (!otherContent) {
+              return;
+            }
+
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+              otherContent.style.maxHeight = "0px";
+            }
+          });
+
+          if (isActive) {
+            item.classList.remove("active");
+            content.style.maxHeight = "0px";
+          } else {
+            item.classList.add("active");
+            content.style.maxHeight = contentInner.scrollHeight + 48 + "px";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
