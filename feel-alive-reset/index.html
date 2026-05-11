@@ -1356,38 +1356,50 @@
         return;
       }
 
-      const milestones = [10, 25, 50, 75, 90];
-      const firedMilestones = new Set();
+      const trackedSections = [
+        { selector: "#hero", eventName: "far_fold_view", sectionName: "fold" },
+        { selector: "#social-proof", eventName: "far_trust_view", sectionName: "trust" },
+        { selector: "#what-you-get", eventName: "far_what_you_get_view", sectionName: "what_you_get" },
+        { selector: "#details", eventName: "far_faq_view", sectionName: "faq" },
+        { selector: ".post-faq-cta-section", eventName: "far_cta_view", sectionName: "cta" }
+      ];
 
-      function getScrollPercent() {
-        const doc = document.documentElement;
-        const maxScroll = doc.scrollHeight - window.innerHeight;
-        if (maxScroll <= 0) {
-          return 100;
+      const seenEvents = new Set();
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const eventName = entry.target.getAttribute("data-far-event");
+            const sectionName = entry.target.getAttribute("data-far-section");
+            if (!eventName || seenEvents.has(eventName)) {
+              return;
+            }
+
+            seenEvents.add(eventName);
+            gtag("event", eventName, {
+              section_name: sectionName,
+              page_path: window.location.pathname
+            });
+          });
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+      trackedSections.forEach(function (item) {
+        const section = document.querySelector(item.selector);
+        if (!section) {
+          return;
         }
 
-        return (window.scrollY / maxScroll) * 100;
-      }
-
-      function checkMilestones() {
-        const scrollPercent = getScrollPercent();
-
-        milestones.forEach(function (milestone) {
-          if (scrollPercent < milestone || firedMilestones.has(milestone)) {
-            return;
-          }
-
-          firedMilestones.add(milestone);
-          gtag("event", "far_scroll_" + milestone, {
-            scroll_percent: milestone,
-            page_path: window.location.pathname
-          });
-        });
-      }
-
-      window.addEventListener("scroll", checkMilestones, { passive: true });
-      window.addEventListener("resize", checkMilestones);
-      checkMilestones();
+        section.setAttribute("data-far-event", item.eventName);
+        section.setAttribute("data-far-section", item.sectionName);
+        observer.observe(section);
+      });
     });
   </script>
 </body>
