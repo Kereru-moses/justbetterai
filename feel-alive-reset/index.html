@@ -1356,63 +1356,38 @@
         return;
       }
 
-      const sections = Array.from(document.querySelectorAll("main > section")).filter(function (section) {
-        return !section.classList.contains("guarantee-section");
-      });
-      if (sections.length === 0) {
-        return;
-      }
+      const milestones = [10, 25, 50, 75, 90];
+      const firedMilestones = new Set();
 
-      const seenSections = new Set();
-
-      function getSectionName(section, index) {
-        if (section.id) {
-          return section.id;
+      function getScrollPercent() {
+        const doc = document.documentElement;
+        const maxScroll = doc.scrollHeight - window.innerHeight;
+        if (maxScroll <= 0) {
+          return 100;
         }
 
-        const className = (section.className || "").split(/\s+/).filter(Boolean)[0];
-        if (className) {
-          return className;
-        }
-
-        return "section-" + (index + 1);
+        return (window.scrollY / maxScroll) * 100;
       }
 
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (!entry.isIntersecting) {
-              return;
-            }
+      function checkMilestones() {
+        const scrollPercent = getScrollPercent();
 
-            const section = entry.target;
-            const sectionIndex = Number(section.getAttribute("data-section-index"));
-            const sectionName = section.getAttribute("data-section-name");
-            const key = sectionIndex + ":" + sectionName;
+        milestones.forEach(function (milestone) {
+          if (scrollPercent < milestone || firedMilestones.has(milestone)) {
+            return;
+          }
 
-            if (seenSections.has(key)) {
-              return;
-            }
-
-            seenSections.add(key);
-            gtag("event", "far_section_view", {
-              section_name: sectionName,
-              section_index: sectionIndex,
-              page_path: window.location.pathname
-            });
+          firedMilestones.add(milestone);
+          gtag("event", "far_scroll_" + milestone, {
+            scroll_percent: milestone,
+            page_path: window.location.pathname
           });
-        },
-        {
-          threshold: 0.1
-        }
-      );
+        });
+      }
 
-      sections.forEach(function (section, index) {
-        const sectionName = getSectionName(section, index);
-        section.setAttribute("data-section-name", sectionName);
-        section.setAttribute("data-section-index", String(index + 1));
-        observer.observe(section);
-      });
+      window.addEventListener("scroll", checkMilestones, { passive: true });
+      window.addEventListener("resize", checkMilestones);
+      checkMilestones();
     });
   </script>
 </body>
