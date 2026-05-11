@@ -76,6 +76,33 @@
       font-weight: 700;
       color: var(--brand-white);
       text-align: center;
+      animation: bookmarkPulse 1.8s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes bookmarkPulse {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+      }
+      40% {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 0 rgba(0, 0, 0, 0.16);
+      }
+      70% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .btn.btn-secondary {
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+      margin-top: 8px;
+    }
+
+    .btn.btn-secondary:hover {
+      background: #e5e500;
     }
 
     .section-title {
@@ -142,6 +169,16 @@
     .card p.meta {
       font-size: 13px;
       color: rgba(0, 0, 0, 0.65);
+    }
+
+    .how-to {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+      color: rgba(0, 0, 0, 0.9);
+      font-size: 14px;
+      line-height: 1.35;
     }
 
     .btn {
@@ -429,6 +466,98 @@
       color: var(--brand-white);
     }
 
+    .modal-shell {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.68);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-shell.show {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: var(--brand-white);
+      border: 6px solid var(--brand-black);
+      box-shadow: 10px 10px 0 var(--brand-black);
+      padding: 18px;
+    }
+
+    .modal-panel h2 {
+      font-size: 30px;
+      line-height: 1.08;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .modal-panel p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .modal-steps {
+      margin: 8px 0 14px;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .modal-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .bookmark-reminder-panel {
+      width: min(860px, 100%);
+      background: var(--brand-red);
+      color: var(--brand-white);
+      border-width: 8px;
+      padding: 28px 24px;
+      box-shadow: 12px 12px 0 var(--brand-black);
+    }
+
+    .bookmark-reminder-panel h2 {
+      font-size: 44px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .bookmark-reminder-panel p {
+      font-size: 24px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .bookmark-reminder-panel .modal-actions {
+      grid-template-columns: 1fr;
+      margin-top: 6px;
+    }
+
+    .bookmark-reminder-panel .btn {
+      font-size: 24px;
+      padding: 14px;
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+      border-width: 4px;
+    }
+
+    .bookmark-reminder-panel .btn:hover {
+      background: #e5e500;
+    }
+
     @media (max-width: 980px) {
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -449,6 +578,26 @@
       }
 
       .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-panel h2 {
+        font-size: 24px;
+      }
+
+      .bookmark-reminder-panel h2 {
+        font-size: 32px;
+      }
+
+      .bookmark-reminder-panel p {
+        font-size: 19px;
+      }
+
+      .bookmark-reminder-panel .btn {
+        font-size: 20px;
+      }
+
+      .modal-actions {
         grid-template-columns: 1fr;
       }
 
@@ -479,6 +628,12 @@
 
     .hidden {
       display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bookmark-note {
+        animation: none;
+      }
     }
   </style>
   <!-- Meta Pixel Code -->
@@ -511,7 +666,7 @@
   <main class="wrap">
     <header class="top">
       <h1>Feel Alive Reset Downloads</h1>
-      <p>These are the same tools and bonuses shown on the main page. Download each one separately below.</p>
+      <p>These are not just downloads. Each file is a tool you use with ChatGPT to get a clear daily plan and follow-through.</p>
     </header>
     <p class="bookmark-note">Bookmark this page now so you can always come back and download your files anytime.</p>
 
@@ -525,7 +680,12 @@
           <div class="card-body">
             <h3>Your Personal AI Energy Coach</h3>
             <p>Your own AI coach that tells you exactly what to shift so you come home with something left. No app. No daily login. No streaks.</p>
-            <a class="btn" href="./coaching/personal-energy-coach.pdf" download>Create Your Coach</a>
+            <ol class="how-to">
+              <li>Download and open this PDF first.</li>
+              <li>Copy the prompt and paste it into ChatGPT.</li>
+              <li>Answer honestly and use the output as your daily plan.</li>
+            </ol>
+            <button id="openCoachSetupBtnCard" type="button" class="btn">Start Personal AI Energy Coach</button>
           </div>
         </article>
 
@@ -536,7 +696,11 @@
           <div class="card-body">
             <h3>Tony Case Study</h3>
             <p>See exactly how a real dad runs this in a real week so it fits your life and does not become another thing you started and quit.</p>
-            <a class="btn" href="./case-studies/tony-case-study.pdf" download>Download Tony Case Study</a>
+            <ol class="how-to">
+              <li>Read this after you run your first AI coach prompt.</li>
+              <li>Pick one change Tony made and apply it this week.</li>
+            </ol>
+            <a class="btn" href="./case-studies/tony-case-study.pdf" download target="_blank" rel="noopener noreferrer">Download Tony Case Study</a>
           </div>
         </article>
 
@@ -547,7 +711,11 @@
           <div class="card-body">
             <h3>The Daily Checklist</h3>
             <p>A simple daily reference that makes follow-through automatic so you stop starting over and start trusting yourself again.</p>
-            <a class="btn" href="./checklists/the-energy-checklist.pdf" download>Download Energy Checklist</a>
+            <ol class="how-to">
+              <li>Use this at the start of your day and again before heading home.</li>
+              <li>Tick the actions you actually completed.</li>
+            </ol>
+            <a class="btn" href="./checklists/the-energy-checklist.pdf" download target="_blank" rel="noopener noreferrer">Download Energy Checklist</a>
           </div>
         </article>
       </div>
@@ -563,9 +731,13 @@
           <div class="card-body">
             <h3>The Doorstep Switch</h3>
             <p>A short audio to switch from work mode to dad mode before you walk through the door, plus the companion guide to make it repeatable.</p>
+            <ol class="how-to">
+              <li>Play the audio before you get out of the car or walk in the door.</li>
+              <li>Use the guide so you run the same reset every day.</li>
+            </ol>
             <div class="btn-stack">
-              <a class="btn" href="./audio/doorstep-switch.mp3" download>Download Doorstep Audio</a>
-              <a class="btn" href="./guides/doorstep-switch-guide.pdf" download>Download Doorstep Guide</a>
+              <a class="btn" href="./audio/doorstep-switch.mp3" download target="_blank" rel="noopener noreferrer">Download Doorstep Audio</a>
+              <a class="btn" href="./guides/doorstep-switch-guide.pdf" download target="_blank" rel="noopener noreferrer">Download Doorstep Guide</a>
             </div>
           </div>
         </article>
@@ -577,7 +749,11 @@
           <div class="card-body">
             <h3>The Strong Start</h3>
             <p>Set up your morning so the afternoon crash never gets the upper hand.</p>
-            <a class="btn" href="./guides/strong-start-setup.pdf" download>Download Strong Start</a>
+            <ol class="how-to">
+              <li>Read and set up your morning plan tonight.</li>
+              <li>Run it for three days before changing anything.</li>
+            </ol>
+            <a class="btn" href="./guides/strong-start-setup.pdf" download target="_blank" rel="noopener noreferrer">Download Strong Start</a>
           </div>
         </article>
 
@@ -588,7 +764,11 @@
           <div class="card-body">
             <h3>The Weekly Reset AI Coach</h3>
             <p>Your weekly AI check-in so one rough week does not become another month running on fumes.</p>
-            <a class="btn" href="./coaching/sunday-review-coach.pdf" download>Download Sunday Review Coach</a>
+            <ol class="how-to">
+              <li>Run this once per week in ChatGPT.</li>
+              <li>Paste your week summary, then follow the next-week plan it gives you.</li>
+            </ol>
+            <button id="openWeeklySetupBtnCard" type="button" class="btn">Start Weekly Reset AI Coach</button>
           </div>
         </article>
       </div>
@@ -639,6 +819,46 @@
       <p id="newsletterStatus" class="newsletter-status" aria-live="polite"></p>
     </section>
   </main>
+  <div id="bookmarkReminderModal" class="modal-shell" aria-hidden="true">
+    <article class="modal-panel bookmark-reminder-panel" role="dialog" aria-modal="true" aria-labelledby="bookmarkReminderTitle">
+      <h2 id="bookmarkReminderTitle">Bookmark This Page Now</h2>
+      <p>Bookmark this page now so you do not lose access to your files and tools.</p>
+      <p>You will also receive an email with this link at a later date, just in case.</p>
+      <div class="modal-actions">
+        <button id="closeBookmarkReminderBtn" type="button" class="btn">I Bookmarked It</button>
+      </div>
+    </article>
+  </div>
+  <div id="coachSetupModal" class="modal-shell" aria-hidden="true">
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="coachSetupTitle">
+      <h2 id="coachSetupTitle">How To Use The Personal AI Energy Coach</h2>
+      <p>Choose your AI tool first. I recommend ChatGPT because it is simple and works well for this reset.</p>
+      <ol class="modal-steps">
+        <li><strong>If you use a free account:</strong> download the PDF, copy the prompt, paste it into chat, then answer the questions.</li>
+        <li><strong>If you use a paid account:</strong> create your own custom GPT or Project and paste this prompt in as your instructions.</li>
+      </ol>
+      <div class="modal-actions">
+        <a class="btn btn-secondary" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">Open ChatGPT</a>
+        <a class="btn" href="./coaching/personal-energy-coach.pdf" download target="_blank" rel="noopener noreferrer">Download Coach PDF</a>
+        <button id="closeCoachSetupBtn" type="button" class="btn">Close</button>
+      </div>
+    </article>
+  </div>
+  <div id="weeklySetupModal" class="modal-shell" aria-hidden="true">
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="weeklySetupTitle">
+      <h2 id="weeklySetupTitle">How To Use The Weekly Reset AI Coach</h2>
+      <p>Use this once per week to review what worked, what did not, and what to change for next week.</p>
+      <ol class="modal-steps">
+        <li><strong>If you use a free account:</strong> download the PDF, copy the prompt, paste it into chat, then add your week summary.</li>
+        <li><strong>If you use a paid account:</strong> create a custom GPT or Project and use this prompt as weekly review instructions.</li>
+      </ol>
+      <div class="modal-actions">
+        <a class="btn btn-secondary" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">Open ChatGPT</a>
+        <a class="btn" href="./coaching/sunday-review-coach.pdf" download target="_blank" rel="noopener noreferrer">Download Weekly Reset PDF</a>
+        <button id="closeWeeklySetupBtn" type="button" class="btn">Close</button>
+      </div>
+    </article>
+  </div>
   <script>
     (function () {
       const statusNode = document.getElementById("newsletterStatus");
@@ -682,6 +902,111 @@
         } catch (err) {
           status.textContent = "Copy failed. Please copy manually: " + email;
           status.classList.add("show");
+        }
+      });
+    })();
+
+    (function () {
+      const modal = document.getElementById("bookmarkReminderModal");
+      const closeBtn = document.getElementById("closeBookmarkReminderBtn");
+      if (!modal || !closeBtn) return;
+
+      const storageKey = "far_member_bookmark_prompt_seen_v2";
+      const forceShow = new URLSearchParams(window.location.search).get("showBookmark") === "1";
+
+      function closeModal() {
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+        try {
+          window.localStorage.setItem(storageKey, "1");
+        } catch (err) {}
+      }
+
+      let shouldShow = true;
+      try {
+        shouldShow = forceShow || window.localStorage.getItem(storageKey) !== "1";
+      } catch (err) {}
+
+      if (shouldShow) {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("show")) {
+          closeModal();
+        }
+      });
+    })();
+
+    (function () {
+      const modal = document.getElementById("coachSetupModal");
+      const openCard = document.getElementById("openCoachSetupBtnCard");
+      const closeBtn = document.getElementById("closeCoachSetupBtn");
+      if (!modal || !openCard || !closeBtn) return;
+
+      function openModal() {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal() {
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      openCard.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("show")) {
+          closeModal();
+        }
+      });
+    })();
+
+    (function () {
+      const modal = document.getElementById("weeklySetupModal");
+      const openCard = document.getElementById("openWeeklySetupBtnCard");
+      const closeBtn = document.getElementById("closeWeeklySetupBtn");
+      if (!modal || !openCard || !closeBtn) return;
+
+      function openModal() {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal() {
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      openCard.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("show")) {
+          closeModal();
         }
       });
     })();
